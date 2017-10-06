@@ -2,7 +2,7 @@
 
 ![image](https://user-images.githubusercontent.com/18099289/31276079-5714378e-aa9a-11e7-8a98-bf42a302cc6c.png)
 
-# Contributing
+## Contributing
 
 We welcome contributions from the public.
 
