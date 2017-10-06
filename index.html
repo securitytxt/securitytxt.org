@@ -76,15 +76,15 @@ Disclosure: Full</code></pre><a class="button button-primary" href="#generate">G
 	<div class="section" id="generate">
 		<div class="wrapper">
 			<h3>Generate your security.txt file</h3>
-			<form onsubmit="download(this['name'].value, this['blah'].value + this['contact'].value + this['text1'].value + '\n' + this['pgp-key'].value + this['text2'].value + '\n' + this['acknowlegements'].value + this['text3'].value + '\n' + this['disclosure'].value + this['text4'].value)">
+			<form onsubmit="download(this['name'].value, this['blah'].value + this['contact'].value + this['text1'].value + '\n' + this['pgp-key'].value + this['text2'].value + '\n' + this['acknowledgements'].value + this['text3'].value + '\n' + this['disclosure'].value + this['text4'].value)">
 				<input type="hidden" name="name" value="security.txt">
 				<input type="hidden" name="blah" value="">
 				<p>Contact:</p><input name="contact" type="hidden" value="Contact: "> 
 				<input class="u-full-width" type="text" placeholder="security@example.com" name="text1">
 				<p>PGP-key:</p><input name="pgp-key" type="hidden" value="PGP-key: ">
 				<input class="u-full-width" type="text" placeholder="https://example.com/pgp-key.txt" name="text2">
-				<p>Acknowlegements:</p><input name="acknowlegements" type="hidden" value="Acknowlegements: "> 
-				<input class="u-full-width" type="text" placeholder="https://example.com/acknowlegements.html" name="text3">
+				<p>Acknowledgements:</p><input name="acknowledgements" type="hidden" value="Acknowledgements: "> 
+				<input class="u-full-width" type="text" placeholder="https://example.com/acknowledgements.html" name="text3">
 				<p>Disclosure:</p><input name="disclosure" type="hidden" value="Disclosure: "> 
 				<input class="u-full-width" type="text" placeholder="https://example.com/disclosure.html" name="text4">
 				<br>
