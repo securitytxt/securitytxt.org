@@ -106,18 +106,6 @@ input[type="submit"].button-primary:hover,
 	border: 1.5px solid #6bd3b8;
 }
 
-#contributors a {
-	position: relative;
-	text-decoration: none;
-}
-
-#contributors img {
-	height: auto;
-	width: 100%;
-	border-radius: 50%;
-	margin: 20px auto;
-}
-
 #share {
 	text-align: center;
 	background-color: #eee;
