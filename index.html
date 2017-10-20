@@ -14,7 +14,7 @@
 	<link href="css/normalize.css" rel="stylesheet" type="text/css">
 	<link href="css/skeleton.css" rel="stylesheet" type="text/css">
 	<link href="css/stylesheet.css" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" integrity="sha384-4r9SMzlCiUSd92w9v1wROFY7DlBc5sDYaEBhcCJR7Pm2nuzIIGKVRtYWlf6w+GG4" crossorigin="anonymous">
+	<link href="css/ionicons.min.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif%7CPlayfair+Display">
 	<link rel="shortcut icon" type="image/x-icon" href="img/logo.png" />
 	<meta name="theme-color" content="#6bd3b8" />
@@ -44,7 +44,7 @@ Encryption: https://example.com/pgp-key.txt
 			<h5>Is security.txt an <a href="https://en.wikipedia.org/wiki/Request_for_Comments">RFC</a>?</h5>
 			<p>security.txt is currently an Internet draft that has been submitted for RFC review. This means that security.txt is still in the early stages of development. We welcome contributions from the public: <a href="https://github.com/securitytxt/security-txt">https://github.com/securitytxt/security-txt</a></p>
 			<h5>Where should I put the security.txt file?</h5>
-			<p>The <a href="https://tools.ietf.org/html/draft-foudil-securitytxt-00#section-2">current draft</a> states that the security.txt file should be located under the top-level directory. We are currently debating whether or not the file should be placed under the /.well-known/ path (/.well-known/security.txt) [RFC5785]. The discussion can be found <a href="https://github.com/securitytxt/security-txt/issues/3">here</a>.</p>
+			<p>The <a href="https://tools.ietf.org/html/draft-foudil-securitytxt-00#section-2">current draft</a> states that the security.txt file should be located under the top-level directory. We are currently writing a new version of the draft that places security.txt under the /.well-known/ path (/.well-known/security.txt) [RFC5785]. Therefore it is highly recommended to use the /.well-known/ path for your security.txt file.</p>
 			<h5>Will adding an email address expose me to spam bots?</h5>
 			<p>The email value is an optional field. If you are worried about spam you can set a URI as the value and link to your security policy.</p>
 		</div>
@@ -80,13 +80,33 @@ Encryption: https://example.com/pgp-key.txt
 			<p><a href="https://twitter.com/digitalwoot">Ryan Black</a> for registering securitytxt.org and setting up the website.</p>
 		</div>
 	</div>
+    <div class="section" id="projects">
+        <div class="wrapper">
+            <h3>Security.txt projects</h3>
+            <p><a href="https://github.com/hrbrmstr/securitytxt">Identify and Parse Web Security Policies Files in R </a> by <a href="https://twitter.com/hrbrmstr">boB Rudis</a>.</p>
+            <p><a href="https://github.com/securitytxt/Extension">The official Chrome extension for security.txt</a> by <a href="://twitter.com/karel_origin">Karel Origin</a>.</p>
+            <p><a href="https://github.com/tomnomnom/securitytxt">A security.txt parser for Go</a> by <a href="https://twitter.com/TomNomNom">Tom Hudson</a>.</p>
+            <p><a href="https://github.com/tomnomnom/phpsecuritytxt">A security.txt parser for PHP</a> by <a href="https://twitter.com/TomNomNom">Tom Hudson</a>.</p>
+            <p><a href="https://github.com/adamdecaf/go-security-txt">Golang security.txt parser and cli tool</a> by <a href="https://github.com/adamdecaf">Adam Shannon</a>.</p>
+        </div>
+    </div>
+    <div class="section" id="help">
+        <div class="wrapper">
+            <h3>What can you do to help?</h3>
+            <ul>
+                <li>Help spread the word;</li>
+                <li>Encourage popular frameworks to include a security.txt file by default;</li>
+                <li>Discuss adding a security.txt file at your company;</li>
+                <li>Contribute to the security.txt project <a href="https://github.com/securitytxt">on GitHub</a>.</li>
+            </ul>
+        </div>
+    </div>
 	<div class="section" id="share">
 		<div class="wrapper">
 			<a class="button button-primary" href="https://twitter.com/intent/tweet?text=security.txt%20-%20A%20standard%20that%20allows%20websites%20to%20define%20security%20policies.%20https%3A%2F%2Fsecuritytxt.org%2F"><i class="ion-social-twitter"></i> Tweet about security.txt</a>
             <a class="button" href="https://github.com/securitytxt/security-txt">Contribute</a>
 		</div>
 	</div>
-	<script async charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js" integrity="sha384-EaUkI/FiMJtEXWAl0dCczvbFvjfzsIF1UNKGJvu9p5JIG71Kih7/kQJvYbBL7HOn" crossorigin="anonymous"></script>
 	<script type="text/javascript">
        function download(filename, text) {
