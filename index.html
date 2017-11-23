@@ -1,86 +1,86 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta content="width=device-width" name="viewport">
-	<title>security.txt</title>
-	<meta property="og:site_name" content="Security.txt"/>
-	<meta property="og:url" content="https://securitytxt.org/" />
-	<meta property="og:title" content="Security.txt" />
-	<meta property="og:description" content="Security.txt defines a standard to help organizations define the process for security researchers to securely disclose security vulnerabilities." />
-	<meta property="og:image" content="https://user-images.githubusercontent.com/18099289/31276079-5714378e-aa9a-11e7-8a98-bf42a302cc6c.png" />
-	<meta name="twitter:card" content="summary" />
-	<meta name="description" content="Security.txt defines a standard to help organizations define the process for security researchers to securely disclose security vulnerabilities.">
-	<link href="css/normalize.css" rel="stylesheet" type="text/css">
-	<link href="css/skeleton.css" rel="stylesheet" type="text/css">
-	<link href="css/stylesheet.css" rel="stylesheet" type="text/css">
-	<link href="css/ionicons.min.css" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif%7CPlayfair+Display">
-	<link rel="shortcut icon" type="image/x-icon" href="img/logo.png" />
-	<meta name="theme-color" content="#6bd3b8" />
+    <meta charset="utf-8">
+    <meta content="width=device-width" name="viewport">
+    <title>security.txt</title>
+    <meta property="og:site_name" content="Security.txt"/>
+    <meta property="og:url" content="https://securitytxt.org/" />
+    <meta property="og:title" content="Security.txt" />
+    <meta property="og:description" content="Security.txt defines a standard to help organizations define the process for security researchers to securely disclose security vulnerabilities." />
+    <meta property="og:image" content="https://user-images.githubusercontent.com/18099289/31276079-5714378e-aa9a-11e7-8a98-bf42a302cc6c.png" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="description" content="Security.txt defines a standard to help organizations define the process for security researchers to securely disclose security vulnerabilities.">
+    <link href="css/normalize.css" rel="stylesheet" type="text/css">
+    <link href="css/skeleton.css" rel="stylesheet" type="text/css">
+    <link href="css/stylesheet.css" rel="stylesheet" type="text/css">
+    <link href="css/ionicons.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif%7CPlayfair+Display">
+    <link rel="shortcut icon" type="image/x-icon" href="img/logo.png" />
+    <meta name="theme-color" content="#6bd3b8" />
 </head>
 <body>
-	<div class="section landing">
-		<div class="wrapper">
-			<h1>security.txt</h1>
-			<pre><code># Our security address
+    <div class="section landing">
+        <div class="wrapper">
+            <h1>security.txt</h1>
+            <pre><code># Our security address
 Contact: security@example.com
 
 # Our PGP key
 Encryption: https://example.com/pgp-key.txt
 </code></pre><a class="button button-primary" href="#generate">Generate security.txt file</a> <a class="button" href="#about">Learn more</a>
-		</div>
-	</div>
-	<div class="section" id="about">
-		<div class="wrapper">
-			<h5><i>“When security risks in web services are discovered by independent security researchers who understand the severity of the risk, they often lack the channels to properly disclose them. As a result, security issues may be left unreported. Security.txt defines a standard to help organizations define the process for security researchers to securely disclose security vulnerabilities.”</i></h5><a class="button button-primary" href="https://tools.ietf.org/html/draft-foudil-securitytxt-00">Read the original Internet draft &#10148;</a></br>
+        </div>
+    </div>
+    <div class="section" id="about">
+        <div class="wrapper">
+            <h5><i>“When security risks in web services are discovered by independent security researchers who understand the severity of the risk, they often lack the channels to properly disclose them. As a result, security issues may be left unreported. Security.txt defines a standard to help organizations define the process for security researchers to securely disclose security vulnerabilities.”</i></h5><a class="button button-primary" href="https://tools.ietf.org/html/draft-foudil-securitytxt-00">Read the original Internet draft &#10148;</a></br>
             <a class="button" href="https://raw.githubusercontent.com/securitytxt/security-txt/draft/draft-foudil-securitytxt.txt">Read the latest draft &#10148;</a>
-		</div>
-	</div>
-	<div class="section">
-		<div class="wrapper">
-			<h3>FAQ</h3>
-			<h5>What is the main purpose of security.txt?</h5>
-			<p>The main purpose of security.txt is to help make things easier for companies and security researchers when trying to secure platforms. Thanks to security.txt, security researchers can easily get in touch with companies about security issues.</p>
-			<h5>Is security.txt an <a href="https://en.wikipedia.org/wiki/Request_for_Comments">RFC</a>?</h5>
-			<p>security.txt is currently an Internet draft that has been submitted for RFC review. This means that security.txt is still in the early stages of development. We welcome contributions from the public: <a href="https://github.com/securitytxt/security-txt">https://github.com/securitytxt/security-txt</a></p>
-			<h5>Where should I put the security.txt file?</h5>
-			<p>The <a href="https://tools.ietf.org/html/draft-foudil-securitytxt-00#section-2">current draft</a> states that the security.txt file should be located under the top-level directory. We are currently writing a new version of the draft that places security.txt under the /.well-known/ path (/.well-known/security.txt) [RFC5785]. Therefore it is highly recommended to use the /.well-known/ path for your security.txt file.</p>
-			<h5>Will adding an email address expose me to spam bots?</h5>
-			<p>The email value is an optional field. If you are worried about spam you can set a URI as the value and link to your security policy.</p>
-		</div>
-	</div>
-	<div class="section" id="generate">
-		<div class="wrapper">
-			<h3>Generate your security.txt file</h3>
-			<form onsubmit="download(this['name'].value, this['blah'].value + this['contact'].value + this['text1'].value + '\n' + this['encryption'].value + this['text2'].value + '\n' + this['acknowledgements'].value + this['text3'].value)">
-				<input type="hidden" name="name" value="security.txt">
-				<input type="hidden" name="blah" value="">
-				<p>Contact:</p><input name="contact" type="hidden" value="Contact: "> 
-				<input class="u-full-width" type="text" placeholder="security@example.com" name="text1">
-				<p>Encryption:</p><input name="encryption" type="hidden" value="Encryption: ">
-				<input class="u-full-width" type="text" placeholder="https://example.com/pgp-key.txt" name="text2">
-				<p>Acknowledgements:</p><input name="acknowledgements" type="hidden" value="Acknowledgements: "> 
-				<input class="u-full-width" type="text" placeholder="https://example.com/acknowledgements.html" name="text3">
-				<br>
-				<input class="button button-primary" type="submit" value="Generate security.txt file">
-			</form>
-		</div>
-	</div>
-	<div class="section" id="contributors">
-		<div class="wrapper">
-			<h3>Contributors</h3>
-			<p>The <a href="https://twitter.com/EdOverflow">editor</a> would like to acknowledge the help provided during the development of security.txt by the following individuals:</p>
-			<p><a href="https://twitter.com/TomNomNom">Tom Hudson</a> helped writing the "File Format Description" and wrote several security.txt parsers.</p>
-			<p><a href="https://twitter.com/teknogeek_">Joel Margolis</a> was a big help when it came to wording the Internet draft appropriately.</p>
-			<p><a href="https://twitter.com/jobertabma">Jobert Abma</a> for raising issues and concerns that might arise when using certain directives.</p>
-			<p><a href="https://twitter.com/gerben_javado">Gerben Janssen van Doorn</a> for reviewing the Internet draft multiple times.</p>
-			<p><a href="https://twitter.com/sumlac">Justin Calmus</a> was always there to answer questions related to writing the Internet draft.</p>
-			<p><a href="https://twitter.com/caseyjohnellis">Casey Ellis</a> had several ideas related to security.txt that helped shape security.txt itself.</p>
-			<p><a href="https://twitter.com/sirdarckcat">Eduardo Vela</a> and <a href="https://twitter.com/kkotowicz">Krzysztof Kotowicz</a> for meeting in person to discuss security.txt in great detail.</p>
-			<p><a href="https://twitter.com/digitalwoot">Ryan Black</a> for registering securitytxt.org and setting up the website.</p>
-		</div>
-	</div>
+        </div>
+    </div>
+    <div class="section">
+        <div class="wrapper">
+            <h3>FAQ</h3>
+            <h5>What is the main purpose of security.txt?</h5>
+            <p>The main purpose of security.txt is to help make things easier for companies and security researchers when trying to secure platforms. Thanks to security.txt, security researchers can easily get in touch with companies about security issues.</p>
+            <h5>Is security.txt an <a href="https://en.wikipedia.org/wiki/Request_for_Comments">RFC</a>?</h5>
+            <p>security.txt is currently an Internet draft that has been submitted for RFC review. This means that security.txt is still in the early stages of development. We welcome contributions from the public: <a href="https://github.com/securitytxt/security-txt">https://github.com/securitytxt/security-txt</a></p>
+            <h5>Where should I put the security.txt file?</h5>
+            <p>The <a href="https://tools.ietf.org/html/draft-foudil-securitytxt-00#section-2">current draft</a> states that the security.txt file should be located under the top-level directory. We are currently writing a new version of the draft that places security.txt under the /.well-known/ path (/.well-known/security.txt) [RFC5785]. Therefore it is highly recommended to use the /.well-known/ path for your security.txt file.</p>
+            <h5>Will adding an email address expose me to spam bots?</h5>
+            <p>The email value is an optional field. If you are worried about spam you can set a URI as the value and link to your security policy.</p>
+        </div>
+    </div>
+    <div class="section" id="generate">
+        <div class="wrapper">
+            <h3>Generate your security.txt file</h3>
+            <form onsubmit="download(this['name'].value, this['blah'].value + this['contact'].value + this['text1'].value + '\n' + this['encryption'].value + this['text2'].value + '\n' + this['acknowledgements'].value + this['text3'].value)">
+                <input type="hidden" name="name" value="security.txt">
+                <input type="hidden" name="blah" value="">
+                <p>Contact:</p><input name="contact" type="hidden" value="Contact: ">
+                <input class="u-full-width" type="text" placeholder="security@example.com" name="text1">
+                <p>Encryption:</p><input name="encryption" type="hidden" value="Encryption: ">
+                <input class="u-full-width" type="text" placeholder="https://example.com/pgp-key.txt" name="text2">
+                <p>Acknowledgements:</p><input name="acknowledgements" type="hidden" value="Acknowledgements: ">
+                <input class="u-full-width" type="text" placeholder="https://example.com/acknowledgements.html" name="text3">
+                <br>
+                <input class="button button-primary" type="submit" value="Generate security.txt file">
+            </form>
+        </div>
+    </div>
+    <div class="section" id="contributors">
+        <div class="wrapper">
+            <h3>Contributors</h3>
+            <p>The <a href="https://twitter.com/EdOverflow">editor</a> would like to acknowledge the help provided during the development of security.txt by the following individuals:</p>
+            <p><a href="https://twitter.com/TomNomNom">Tom Hudson</a> helped writing the "File Format Description" and wrote several security.txt parsers.</p>
+            <p><a href="https://twitter.com/teknogeek_">Joel Margolis</a> was a big help when it came to wording the Internet draft appropriately.</p>
+            <p><a href="https://twitter.com/jobertabma">Jobert Abma</a> for raising issues and concerns that might arise when using certain directives.</p>
+            <p><a href="https://twitter.com/gerben_javado">Gerben Janssen van Doorn</a> for reviewing the Internet draft multiple times.</p>
+            <p><a href="https://twitter.com/sumlac">Justin Calmus</a> was always there to answer questions related to writing the Internet draft.</p>
+            <p><a href="https://twitter.com/caseyjohnellis">Casey Ellis</a> had several ideas related to security.txt that helped shape security.txt itself.</p>
+            <p><a href="https://twitter.com/sirdarckcat">Eduardo Vela</a> and <a href="https://twitter.com/kkotowicz">Krzysztof Kotowicz</a> for meeting in person to discuss security.txt in great detail.</p>
+            <p><a href="https://twitter.com/digitalwoot">Ryan Black</a> for registering securitytxt.org and setting up the website.</p>
+        </div>
+    </div>
     <div class="section" id="projects">
         <div class="wrapper">
             <h3>Security.txt projects</h3>
@@ -91,8 +91,8 @@ Encryption: https://example.com/pgp-key.txt
             <p><a href="https://github.com/adamdecaf/go-security-txt">Golang security.txt parser and cli tool</a> by <a href="https://github.com/adamdecaf">Adam Shannon</a>.</p>
             <p><a href="https://github.com/austinheap/php-security-txt">A PSR-4 security.txt reader and writer for PHP 7+</a> by <a href="https://twitter.com/austinheap">Austin Heap</a>.</p>
             <p><a href="https://github.com/austinheap/laravel-security-txt">A configurable security.txt plugin for Laravel 5.5+</a> by <a href="https://twitter.com/austinheap">Austin Heap</a>.</p>
-	    <p><a href="https://github.com/gergelyke/express-security.txt">An npm package for express applications </a> by <a href="https://github.com/gergelyke">Gergely Nemeth</a>.</p>
-	    <p><a href="https://github.com/lirantal/express-security-txt">A Node.js middleware for Express that implements security.txt</a> by <a href="https://github.com/lirantal">Liran Tal</a>.</p>
+            <p><a href="https://github.com/gergelyke/express-security.txt">An npm package for express applications </a> by <a href="https://github.com/gergelyke">Gergely Nemeth</a>.</p>
+            <p><a href="https://github.com/lirantal/express-security-txt">A Node.js middleware for Express that implements security.txt</a> by <a href="https://github.com/lirantal">Liran Tal</a>.</p>
         </div>
     </div>
     <div class="section" id="help">
@@ -106,14 +106,14 @@ Encryption: https://example.com/pgp-key.txt
             </ul>
         </div>
     </div>
-	<div class="section" id="share">
-		<div class="wrapper">
-			<a class="button button-primary" href="https://twitter.com/intent/tweet?text=security.txt%20-%20A%20standard%20that%20allows%20websites%20to%20define%20security%20policies.%20https%3A%2F%2Fsecuritytxt.org%2F"><i class="ion-social-twitter"></i> Tweet about security.txt</a>
+    <div class="section" id="share">
+        <div class="wrapper">
+            <a class="button button-primary" href="https://twitter.com/intent/tweet?text=security.txt%20-%20A%20standard%20that%20allows%20websites%20to%20define%20security%20policies.%20https%3A%2F%2Fsecuritytxt.org%2F"><i class="ion-social-twitter"></i> Tweet about security.txt</a>
             <a class="button" href="https://github.com/securitytxt/security-txt">Contribute</a>
-		</div>
-	</div>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js" integrity="sha384-EaUkI/FiMJtEXWAl0dCczvbFvjfzsIF1UNKGJvu9p5JIG71Kih7/kQJvYbBL7HOn" crossorigin="anonymous"></script>
-	<script type="text/javascript">
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js" integrity="sha384-EaUkI/FiMJtEXWAl0dCczvbFvjfzsIF1UNKGJvu9p5JIG71Kih7/kQJvYbBL7HOn" crossorigin="anonymous"></script>
+    <script type="text/javascript">
        function download(filename, text) {
            var magic = document.createElement('a');
            magic.setAttribute('href', 'data:text/plain;charset=utf-8,' +
@@ -124,6 +124,6 @@ Encryption: https://example.com/pgp-key.txt
            magic.click();
            document.body.removeChild(magic);
        }
-	</script>
+    </script>
 </body>
 </html>
