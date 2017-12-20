@@ -1,2 +1,5 @@
-# Our security address
-Contact: https://twitter.com/EdOverflow
+# If you would like to report a security issue
+# you may report it to Ed on HackerOne.
+Contact: https://hackerone.com/ed
+Encryption: https://keybase.pub/edoverflow/pgp_key.asc
+Acknowledgements: https://hackerone.com/ed/thanks
