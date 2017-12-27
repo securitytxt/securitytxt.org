@@ -55,15 +55,19 @@ Encryption: https://example.com/security-policy.html
 	<div class="section" id="generate">
 		<div class="wrapper">
 			<h3>Generate your security.txt file</h3>
-			<form onsubmit="download(this['name'].value, this['blah'].value + this['contact'].value + this['text1'].value + '\n' + this['encryption'].value + this['text2'].value + '\n' + this['acknowledgements'].value + this['text3'].value)">
+			<form onsubmit="download(this['name'].value, this['blah'].value + this['contact'].value + this['text1'].value + '\n' + this['encryption'].value + this['text2'].value + '\n' + this['acknowledgements'].value + this['text3'].value + '\n' + this['policy'].value + this['text4'].value + '\n' + this['signature'].value + this['text5'].value)">
 				<input type="hidden" name="name" value="security.txt">
 				<input type="hidden" name="blah" value="">
-				<p>Contact:</p><input name="contact" type="hidden" value="Contact: "> 
+				<p>Contact: <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt-02#section-2.3">(description)</a></p><input name="contact" type="hidden" value="Contact: "> 
 				<input class="u-full-width" type="text" placeholder="security@example.com" name="text1">
-				<p>Encryption:</p><input name="encryption" type="hidden" value="Encryption: ">
+				<p>Encryption: <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt-02#section-2.4">(description)</a></p><input name="encryption" type="hidden" value="Encryption: ">
 				<input class="u-full-width" type="text" placeholder="https://example.com/pgp-key.txt" name="text2">
-				<p>Acknowledgements:</p><input name="acknowledgements" type="hidden" value="Acknowledgements: "> 
+				<p>Acknowledgements: <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt-02#section-2.7">(description)</a></p><input name="acknowledgements" type="hidden" value="Acknowledgements: "> 
 				<input class="u-full-width" type="text" placeholder="https://example.com/acknowledgements.html" name="text3">
+				<p>Policy: <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt-02#section-2.6">(description)</a></p><input name="policy" type="hidden" value="Policy: "> 
+				<input class="u-full-width" type="text" placeholder="https://example.com/security-policy.html" name="text4">
+				<p>Signature: <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt-02#section-2.5">(description)</a></p><input name="policy" type="hidden" value="signature: "> 
+				<input class="u-full-width" type="text" placeholder="https://example.com/.well-known/security.txt.sig" name="text5">
 				<br>
 				<input class="button button-primary" type="submit" value="Generate security.txt file">
 			</form>
