@@ -1,0 +1,68 @@
+==================================================================
+https://keybase.io/securitytxtkey
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://securitytxt.org
+  * I am securitytxtkey (https://keybase.io/securitytxtkey) on keybase.
+  * I have a public key with fingerprint 11A4 FFA8 678F 020E 8411  4345 AF1B A24A 9E98 F1CC
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "010163e99308dd3098c5a6997a3c4b32d1144bb50496062db33fcfe7ec825c0601e00a",
+      "fingerprint": "11a4ffa8678f020e84114345af1ba24a9e98f1cc",
+      "host": "keybase.io",
+      "key_id": "af1ba24a9e98f1cc",
+      "kid": "010163e99308dd3098c5a6997a3c4b32d1144bb50496062db33fcfe7ec825c0601e00a",
+      "uid": "8fdff119ce87e7e7fe7a8cf58af56f19",
+      "username": "securitytxtkey"
+    },
+    "service": {
+      "hostname": "securitytxt.org",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1515166143,
+  "expire_in": 157680000,
+  "prev": "7aeb0eea27fa1a2e4695ead1f7c915269c50a7647afbb4cad7d180a7ed3866ba",
+  "seqno": 5,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.76
+Comment: https://keybase.io/crypto
+
+yMIrAnicrZJdSBRRFMd3y6y2TwhrtSCZMpUk587nnTUpw3roE7FIs9juzNy7TubM
+OjuurlthQQ9RGZlGZUoPRRIsJgYV0XeIfZOVFAYFkUVR9lCR9WB3pJ7qsXsfLvfc
+3/nfc/6cW5NGe3ze7JTR3Zn7k5u8d6+fqPZsWHP0apxRLT3GBOJMBR458FYdR5xg
+haEzAYYFLJB4rCg8C3WdZxWoiUhSFBnxmqDynA6AIKiqyAqKxEqcrvI80QiWsQY5
+UWMlFmCWRUwOQwwzhO2wbZgOlQUACYQgKMmQsByLoUB1eEFEBKiIE5CCFUiAptHE
+civiZtDiVBTBCwyLxuglOFLeP/j/XHf1iBwkOiEAKBqGMoVkSiKoEREiIkoEKC4Y
+wbaJKjGlI1irtg0n5tQ6rqfbc2jEjhoadu11+/mbW2DZISoSti3H0qyt9LHcccKR
+gJvsxMIuXYPV4G+doGqYOjWUZkSxHTEskwkASmqO4QoDkW5Joo7mMLg2bNg4aLiE
+KEuQpcv9B0eppIywymKMOJkggDgsSIqIkQ6IrClA5CRFE1kkS4KMiKoKGtJlHUAa
+wToPJUl1/YngKtNiAiItE4XcnoyQiZxqGzPbb1zbmOTx+jzJY0a5g+bxjZ/6Z/y6
+88d59k/oW/xwDTiYG/yYkHFnGxrVXFbcrFeWffj+rrSlwVf3aklPZ4v/eZvnyPuJ
+c3/uS7/85k1Dxuq3B+7DjW2Dzwbs4dUpm/Z03fGmtTc+mJ2eWhK/kXF7R1ZP39gr
+/NfFi+K5qGSlM/RkmzUt2vMyu7c3rfXnsvbDLwtrd13o2pk/EE1YU35seVDUfzFd
+PF83ufSx+Qic/Fqf21Twgr+WUjxjvd9/sWDO5ti9wtBg36r6mtf1rfOKznS8uBnr
+WP45b22y/e5Y1YrEl4LU4ryyS0mtp0+1Vw0XcUvn9zzNSnzrPrd3MLpu4R2zEWY2
+1109NDSr/lNq+cDu6TfPbrjSX+E/njxT/AU54kTn
+=Ly5t
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/securitytxtkey
+
+==================================================================
