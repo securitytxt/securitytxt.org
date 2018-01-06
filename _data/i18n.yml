@@ -1,0 +1,31 @@
+en:
+    about: When security risks in web services are discovered by independent security researchers who understand the severity of the risk, they often lack the channels to properly disclose them. As a result, security issues may be left unreported. Security.txt defines a standard to help organizations define the process for security researchers to securely disclose security vulnerabilities.
+    learn_more: Read the Internet draft
+    faq: FAQ
+    q1: What is the main purpose of security.txt?
+    a1: The main purpose of security.txt is to help make things easier for companies and security researchers when trying to secure platforms. Thanks to security.txt, security researchers can easily get in touch with companies about security issues.
+    q2: Is security.txt an RFC?
+    a2: "security.txt is currently an Internet draft that has been submitted for RFC review. This means that security.txt is still in the early stages of development. We welcome contributions from the public: "
+    q3: Where should I put the security.txt file?
+    a3: The current draft states that the security.txt file should be located under the top-level directory. We are currently debating whether or not the file should be placed under the /.well-known/ path (/.well-known/security.txt) [RFC5785]. The discussion can be found here.
+    q4: Will adding an email address expose me to spam bots?
+    a4: The email value is an optional field. If you are worried about spam you can set a URI as the value and link to your security policy.
+    generate: Generate your security.txt file
+    contributors: Contributors
+    thank_you: "The editor would like to acknowledge the help provided during the development of security.txt by the following individuals:"
+
+hi:
+    about: जब वेब सर्विसेज में सुरक्षा जोखिमों की खोज स्वतंत्र सुरक्षा शोधकर्ताओं द्वारा की जाती है जो जोखिम की गंभीरता को समझते हैं, तो उन्हें चैनलों को उचित रूप से खुलासा करने की कमी होती है। परिणामस्वरूप, सुरक्षा संबंधी मुद्दों को अनप्रेषित नहीं किया जा सकता है। Security.txt एक मानक को परिभाषित करता है संगठन सुरक्षा शोधकर्ताओं के लिए सुरक्षा कमजोरियों का सुरक्षित रूप से खुलासा करने की प्रक्रिया को परिभाषित करते हैं। 
+    learn_more: इंटरनेट ड्राफ्ट पढ़ें
+    faq: सामान्य प्रश्न
+    q1: security.txt का मुख्य उद्देश्य क्या है?
+    a1: security.txt का मुख्य उद्देश्य यह है कि कंपनियां और सुरक्षा शोधकर्ताओं के लिए प्लेटफार्मों को सुरक्षित करने का प्रयास करते समय चीजों को आसान बनाने में मदद करना। Security.txt के लिए धन्यवाद, सुरक्षा शोधकर्ताओं सुरक्षा समस्याओं के बारे में कंपनियों के साथ आसानी से संपर्क कर सकते हैं।
+    q2: क्या security.txt RFC है?
+    a2: "security.txt वर्तमान में एक इंटरनेट ड्राफ्ट है जिसे RFC समीक्षा के लिए सबमिट किया गया है। इसका मतलब यह है कि security.txt अभी भी विकास के प्रारंभिक दौर में है। हम लोगों से योगदान का स्वागत करते हैं: "
+    q3: मुझे security.txt फ़ाइल कहां रखनी चाहिए?
+    a3: वर्तमान मसौदा में कहा गया है कि security.txt फ़ाइल शीर्ष-स्तरीय निर्देशिका के अंतर्गत स्थित होनी चाहिए। हम वर्तमान में इस बात पर बहस कर रहे हैं कि फ़ाइल को  /.well-known/  पथ पर रखा जाना चाहिए या नहीं (/.well- known /security.txt) [RFC5785] चर्चा यहां पाई जा सकती है।
+    q4: एक ईमेल पता मुझे स्पैम बॉट्स को बेनकाब करेगा?
+    a4: ईमेल वैल्यू एक वैकल्पिक फ़ील्ड है। यदि आप स्पैम के बारे में चिंतित हैं तो आप अपनी सुरक्षा नीति के मूल्य और लिंक के रूप में एक यूआरआई सेट कर सकते हैं।
+    generate: अपनी security.txt फ़ाइल उत्पन्न करें
+    contributors: योगदानकर्ता
+    thank_you: "संपादक निम्न व्यक्तियों द्वारा security.txt के विकास के दौरान प्रदान की गई सहायता को स्वीकार करना चाहेंगे :"
