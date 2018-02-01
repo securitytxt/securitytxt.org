@@ -114,3 +114,8 @@ input[type="submit"].button-primary:hover,
 #share .button.button-primary {
 	background-color: #1da1f2;
 }
+
+#share p {
+    margin-top: 20px;
+    font-size: 12px;
+}
