@@ -55,7 +55,7 @@ Policy: https://example.com/security-policy.html
 	<div class="section" id="generate">
 		<div class="wrapper">
 			<h3>Generate your security.txt file</h3>
-			<form onsubmit="download(this['name'].value, this['blah'].value + this['contact'].value + this['text1'].value + '\n' + this['encryption'].value + this['text2'].value + '\n' + this['acknowledgements'].value + this['text3'].value + '\n' + this['policy'].value + this['text4'].value + '\n' + this['signature'].value + this['text5'].value + '\n' + this['hiring'].value + this['text6'].value)">
+			<form onsubmit="download(this['name'].value, this['blah'].value + this['contact'].value + 'mailto:' + this['text1'].value + '\n' + this['encryption'].value + this['text2'].value + '\n' + this['acknowledgements'].value + this['text3'].value + '\n' + this['policy'].value + this['text4'].value + '\n' + this['signature'].value + this['text5'].value + '\n' + this['hiring'].value + this['text6'].value)">
 				<input type="hidden" name="name" value="security.txt">
 				<input type="hidden" name="blah" value="">
 				<p>Contact: <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt-03#section-3.3">(description)</a> *</p><input name="contact" type="hidden" value="Contact: ">
