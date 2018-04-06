@@ -1,124 +1,161 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta content="width=device-width" name="viewport">
-    <title>security.txt</title>
-    <meta property="og:site_name" content="Security.txt"/>
-    <meta property="og:url" content="https://securitytxt.org/" />
-    <meta property="og:title" content="Security.txt" />
-    <meta property="og:description" content="Security.txt defines a standard to help organizations define the process for security researchers to securely disclose security vulnerabilities." />
-    <meta property="og:image" content="https://user-images.githubusercontent.com/18099289/31276079-5714378e-aa9a-11e7-8a98-bf42a302cc6c.png" />
-    <meta name="twitter:card" content="summary" />
-    <meta name="description" content="Security.txt defines a standard to help organizations define the process for security researchers to securely disclose security vulnerabilities.">
-    <link href="css/normalize.css" rel="stylesheet" type="text/css">
-    <link href="css/skeleton.css" rel="stylesheet" type="text/css">
-    <link href="css/stylesheet.css" rel="stylesheet" type="text/css">
-    <link href="css/ionicons.min.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif%7CPlayfair+Display">
-    <link rel="shortcut icon" type="image/x-icon" href="img/logo.png" />
-    <meta name="theme-color" content="#6bd3b8" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>security.txt | A proposed standard which allows websites to define security policies.</title>
+  <!-- Search Engine -->
+  <meta name="description" content="A proposed standard which allows websites to define security policies.">
+  <meta name="image" content="https://user-images.githubusercontent.com/18099289/38439489-2503a44a-39de-11e8-8dad-4da05d32fed2.png">
+  <!-- Schema.org for Google -->
+  <meta itemprop="name" content="security.txt">
+  <meta itemprop="description" content="A proposed standard which allows websites to define security policies.">
+  <meta itemprop="image" content="https://user-images.githubusercontent.com/18099289/38439489-2503a44a-39de-11e8-8dad-4da05d32fed2.png">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="security.txt">
+  <meta name="twitter:description" content="A proposed standard which allows websites to define security policies.">
+  <meta name="twitter:site" content="@securitytxt">
+  <meta name="twitter:creator" content="@EdOverflow">
+  <meta name="twitter:image:src" content="https://user-images.githubusercontent.com/18099289/38439489-2503a44a-39de-11e8-8dad-4da05d32fed2.png">
+  <!-- Open Graph general (Facebook, Pinterest & Google+) -->
+  <meta name="og:title" content="security.txt">
+  <meta name="og:description" content="A proposed standard which allows websites to define security policies.">
+  <meta name="og:image" content="https://user-images.githubusercontent.com/18099289/38439489-2503a44a-39de-11e8-8dad-4da05d32fed2.png">
+  <meta name="og:url" content="https://securitytxt.org/">
+  <meta name="og:site_name" content="security.txt">
+  <meta name="og:locale" content="en_US">
+  <meta name="og:type" content="website">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <style>
+    .hero {
+      background-image: url("https://user-images.githubusercontent.com/18099289/38436955-58d160b2-39d6-11e8-9086-c5a9f5eb416a.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    
+    img {
+      display: block;
+      margin: 0 auto;
+    }
+
+    form p {
+      margin-bottom: 5px;
+    }
+
+    .input {
+      margin-bottom: 20px;
+    }
+  </style>
 </head>
 <body>
-    <div class="section landing">
-        <div class="wrapper">
-            <h1>security.txt</h1>
-            <pre><code># Our security address
-Contact: mailto:security@example.com
+  <section class="hero is-medium is-bold">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title">
+          security.txt
+        </h1>
+        <h2 class="subtitle">
+          A proposed standard which allows websites to define security policies.
+        </h2>
+        <a href="https://tools.ietf.org/html/draft-foudil-securitytxt-03">Read the latest Internet draft &#8594;</a>
+      </div>
+    </div>
+    <div class="hero-foot">
+      <nav class="tabs">
+        <div class="container">
+          <img src="https://user-images.githubusercontent.com/18099289/38435318-9cfba9c8-39d1-11e8-87f7-bc2fe74e10b5.png" alt="">
+        </div>
+      </nav>
+    </div>
+  </section>
 
-# Our PGP key
-Encryption: https://example.com/pgp-key.txt
+  <section class="section">
+    <div class="container is-fluid">
+      <h1 class="title">Summary</h1>
+      <p>“When security risks in web services are discovered by independent security researchers who understand the severity of the risk, they often lack the channels to disclose them properly. As a result, security issues may be left unreported. security.txt
+        defines a standard to help organizations define the process for security researchers to disclose security vulnerabilities securely.”</p>
+    </div>
+  </section>
 
-# Our security policy
-Policy: https://example.com/security-policy.html
-</code></pre><a class="button button-primary" href="#generate">Generate security.txt file</a> <a class="button" href="#about">Learn more</a>
-		</div>
-	</div>
-	<div class="section" id="about">
-		<div class="wrapper">
-			<h5><i>“When security risks in web services are discovered by independent security researchers who understand the severity of the risk, they often lack the channels to disclose them properly. As a result, security issues may be left unreported. Security.txt defines a standard to help organizations define the process for security researchers to disclose security vulnerabilities securely.”</i></h5><a class="button" href="https://tools.ietf.org/html/draft-foudil-securitytxt-03">Read the latest draft &#10148;</a>
-		</div>
-	</div>
-	<div class="section">
-		<div class="wrapper">
-			<h3>FAQ</h3>
-			<h5>What is the main purpose of security.txt?</h5>
-			<p>The main purpose of security.txt is to help make things easier for companies and security researchers when trying to secure platforms. Thanks to security.txt, security researchers can easily get in touch with companies about security issues.</p>
-			<h5>Is security.txt an <a href="https://en.wikipedia.org/wiki/Request_for_Comments">RFC</a>?</h5>
-			<p>security.txt is currently an Internet draft that has been submitted for RFC review. This means that security.txt is still in the early stages of development. We welcome contributions from the public: <a href="https://github.com/securitytxt/security-txt">https://github.com/securitytxt/security-txt</a></p>
-			<h5>Where should I put the security.txt file?</h5>
-			<p>The security.txt file should be placed under the /.well-known/ path (/.well-known/security.txt) [RFC5785].</p>
-			<h5>Will adding an email address expose me to spam bots?</h5>
-			<p>The email value is an optional field. If you are worried about spam, you can set a URI as the value and link to your security policy.</p>
-		</div>
-	</div>
-	<div class="section" id="generate">
-		<div class="wrapper">
-			<h3>Generate your security.txt file</h3>
-			<form onsubmit="download(this['name'].value, this['blah'].value + this['contact'].value + 'mailto:' + this['text1'].value + '\n' + this['encryption'].value + this['text2'].value + '\n' + this['acknowledgements'].value + this['text3'].value + '\n' + this['policy'].value + this['text4'].value + '\n' + this['signature'].value + this['text5'].value + '\n' + this['hiring'].value + this['text6'].value)">
-				<input type="hidden" name="name" value="security.txt">
-				<input type="hidden" name="blah" value="">
-				<p>Contact: <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt-03#section-3.3">(description)</a> *</p><input name="contact" type="hidden" value="Contact: ">
-				<input class="u-full-width" type="text" placeholder="mailto:security@example.com" name="text1">
-				<p>Encryption: <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt-03#section-3.4">(description)</a></p><input name="encryption" type="hidden" value="Encryption: ">
-				<input class="u-full-width" type="text" placeholder="https://example.com/pgp-key.txt" name="text2">
-				<p>Acknowledgements: <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt-03#section-3.7">(description)</a></p><input name="acknowledgements" type="hidden" value="Acknowledgements: ">
-				<input class="u-full-width" type="text" placeholder="https://example.com/acknowledgements.html" name="text3">
-				<p>Policy: <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt-03#section-3.6">(description)</a></p><input name="policy" type="hidden" value="Policy: ">
-				<input class="u-full-width" type="text" placeholder="https://example.com/security-policy.html" name="text4">
-				<p>Signature: <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt-03#section-3.5">(description)</a></p><input name="signature" type="hidden" value="Signature: ">
-				<input class="u-full-width" type="text" placeholder="https://example.com/.well-known/security.txt.sig" name="text5">
-                <p>Hiring: <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt-03#section-3.8">(description)</a></p><input name="hiring" type="hidden" value="Hiring: ">
-                <input class="u-full-width" type="text" placeholder="https://example.com/jobs.html" name="text6">
-				<br>
-				<input class="button button-primary" type="submit" value="Generate security.txt file">
-			</form>
-		</div>
-	</div> 
-    <div class="section" id="projects">
-        <div class="wrapper">
-            <h3>Security.txt projects</h3>
-            <p>There are lots of tools and projects to make setting up and maintaining security.txt files really simple.</p>
-            <a class="button button-primary" href="/projects">View security.txt-related projects</a>
-        </div>
+  <section class="section">
+    <div class="container is-fluid">
+      <h1 class="title">Step 1</h1>
+      <p>Create a text file called <code>security.txt</code> under the <code>.well-known</code> directory of your project.</p>
+      <br>
+      <form onsubmit="download(this['name'].value, this['blah'].value + this['contact'].value + 'mailto:' + this['text1'].value + '\n' + this['encryption'].value + this['text2'].value + '\n' + this['acknowledgements'].value + this['text3'].value + '\n' + this['policy'].value + this['text4'].value + '\n' + this['signature'].value + this['text5'].value + '\n' + this['hiring'].value + this['text6'].value)">
+        <input type="hidden" name="name" value="security.txt">
+        <input type="hidden" name="blah" value="">
+        <p>Contact: <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt-03#section-3.3">(description)</a>*</p><input name="contact" type="hidden" value="Contact: ">
+        <input class="input" type="text" placeholder="security@example.com" name="text1">
+        <p>Encryption: <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt-03#section-3.4">(description)</a></p><input name="encryption" type="hidden" value="Encryption: ">
+        <input class="input" type="text" placeholder="https://example.com/pgp-key.txt" name="text2">
+        <p>Acknowledgements: <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt-03#section-3.7">(description)</a></p><input name="acknowledgements" type="hidden" value="Acknowledgements: ">
+        <input class="input" type="text" placeholder="https://example.com/acknowledgements.html" name="text3">
+        <p>Policy: <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt-03#section-3.6">(description)</a></p><input name="policy" type="hidden" value="Policy: ">
+        <input class="input" type="text" placeholder="https://example.com/security-policy.html" name="text4">
+        <p>Signature: <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt-03#section-3.5">(description)</a></p><input name="signature" type="hidden" value="Signature: ">
+        <input class="input" type="text" placeholder="https://example.com/.well-known/security.txt.sig" name="text5">
+        <p>Hiring: <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt-03#section-3.8">(description)</a></p><input name="hiring" type="hidden" value="Hiring: ">
+        <input class="input" type="text" placeholder="https://example.com/jobs.html" name="text6">
+        <br>
+        <input class="button button-primary" type="submit" value="Generate security.txt file">
+      </form>
     </div>
-    <div class="section" id="help">
-        <div class="wrapper">
-            <h3>What can you do to help?</h3>
-            <ul>
-                <li>Help spread the word;</li>
-                <li>Encourage popular frameworks to include a security.txt file by default;</li>
-                <li>Discuss adding a security.txt file at your company;</li>
-                <li>Contribute to the security.txt project <a href="https://github.com/securitytxt">on GitHub</a>.</li>
-            </ul>
-        </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-fluid">
+      <h1 class="title">Step 2</h1>
+      <p>You are ready to go! Publish your security.txt file.</p>
     </div>
-    <div class="section" id="donate">
-        <div class="wrapper">
-            <h3>Donate</h3>
-            <p>Donations will be used to pay bug bounties to individuals who report valid security vulnerabilities in the security.txt project, and to cover the hosting costs.</p>
-            <a class="button button-primary" href="https://liberapay.com/security.txt/donate">Donate</a>
-        </div>
+  </section>
+
+  <section class="section">
+    <div class="container content is-fluid">
+      <h1 class="title">Frequently asked questions</h1>
+      <h5>What is the main purpose of security.txt?</h5>
+      <p>The main purpose of security.txt is to help make things easier for companies and security researchers when trying to secure platforms. Thanks to security.txt, security researchers can easily get in touch with companies about security issues.</p>
+      <h5>Is security.txt an <a href="https://en.wikipedia.org/wiki/Request_for_Comments">RFC</a>?</h5>
+      <p>security.txt is currently an Internet draft that has been submitted for RFC review. This means that security.txt is still in the early stages of development. We welcome contributions from the public: <a href="https://github.com/securitytxt/security-txt">https://github.com/securitytxt/security-txt</a></p>
+      <h5>Where should I put the security.txt file?</h5>
+      <p>The security.txt file should be placed under the <code>/.well-known/</code> path (<code>/.well-known/security.txt</code>) [RFC5785].</p>
+      <h5>Will adding an email address expose me to spam bots?</h5>
+      <p>The email value is an optional field. If you are worried about spam, you can set a URI as the value and link to your security policy.</p>
     </div>
-    <div class="section" id="share">
-        <div class="wrapper">
-            <a class="button button-primary" href="https://twitter.com/intent/tweet?text=security.txt%20-%20A%20proposed%20standard%20that%20allows%20websites%20to%20define%20security%20policies.%20https%3A%2F%2Fsecuritytxt.org%2F"><i class="ion-social-twitter"></i> Tweet about security.txt</a>
-            <a class="button" href="https://github.com/securitytxt/security-txt">Contribute</a>
-            <p>A big thank you to <a href="https://twitter.com/Bugcrowd">Bugcrowd</a>, <a href="https://twitter.com/caseyjohnellis">Casey Ellis</a>, and <a href="https://twitter.com/codesoda">Chris Raethke</a> for donating the securitytxt.org domain to the security.txt project.</p>
-        </div>
+  </section>
+
+  <section class="section is-medium">
+    <div class="container content has-text-centered is-fluid">
+      <h1 class="title">
+        Spread the word
+      </h1>
+      <a class="button is-info" href="https://twitter.com/intent/tweet?text=security.txt%20-%20A%20proposed%20standard%20that%20allows%20websites%20to%20define%20security%20policies.%20https%3A%2F%2Fsecuritytxt.org%2F">Share on Twitter 📣 🎉 ⚡️ 🔥</a>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js" integrity="sha384-EaUkI/FiMJtEXWAl0dCczvbFvjfzsIF1UNKGJvu9p5JIG71Kih7/kQJvYbBL7HOn" crossorigin="anonymous"></script>
-    <script type="text/javascript">
-       function download(filename, text) {
-           var magic = document.createElement('a');
-           magic.setAttribute('href', 'data:text/plain;charset=utf-8,' +
-               encodeURIComponent(text));
-           magic.setAttribute('download', filename);
-           magic.style.display = 'none';
-           document.body.appendChild(magic);
-           magic.click();
-           document.body.removeChild(magic);
-       }
-    </script>
+  </section>
+
+  <footer class="footer">
+    <div class="container is-fluid">
+      <div class="content has-text-centered">
+        <p>
+          <strong>security.txt</strong> by <a href="https://edoverflow.com">EdOverflow</a> and <a href="https://wwws.nightwatchcybersecurity.com/">Yakov Shafranovich</a>.</p>
+          <small>Thank you to Casey Ellis and Chris Raethke for donating the securitytxt.org domain.</small>
+      </div>
+    </div>
+  </footer>
+  <script type="text/javascript">
+    function download(filename, text) {
+      var magic = document.createElement('a');
+      magic.setAttribute('href', 'data:text/plain;charset=utf-8,' +
+        encodeURIComponent(text));
+      magic.setAttribute('download', filename);
+      magic.style.display = 'none';
+      document.body.appendChild(magic);
+      magic.click();
+      document.body.removeChild(magic);
+    }
+  </script>
 </body>
 </html>
