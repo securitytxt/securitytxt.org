@@ -86,24 +86,7 @@
       <h1 class="title">Step 1</h1>
       <p>Create a text file called <code>security.txt</code> under the <code>.well-known</code> directory of your project.</p>
       <br>
-      <form onsubmit="download(this['name'].value, this['blah'].value + this['contact'].value + 'mailto:' + this['text1'].value + '\n' + this['encryption'].value + this['text2'].value + '\n' + this['acknowledgements'].value + this['text3'].value + '\n' + this['policy'].value + this['text4'].value + '\n' + this['signature'].value + this['text5'].value + '\n' + this['hiring'].value + this['text6'].value)">
-        <input type="hidden" name="name" value="security.txt">
-        <input type="hidden" name="blah" value="">
-        <p>Contact: <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt-03#section-3.3">(description)</a>*</p><input name="contact" type="hidden" value="Contact: ">
-        <input class="input" type="text" placeholder="security@example.com" name="text1">
-        <p>Encryption: <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt-03#section-3.4">(description)</a></p><input name="encryption" type="hidden" value="Encryption: ">
-        <input class="input" type="text" placeholder="https://example.com/pgp-key.txt" name="text2">
-        <p>Acknowledgements: <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt-03#section-3.7">(description)</a></p><input name="acknowledgements" type="hidden" value="Acknowledgements: ">
-        <input class="input" type="text" placeholder="https://example.com/acknowledgements.html" name="text3">
-        <p>Policy: <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt-03#section-3.6">(description)</a></p><input name="policy" type="hidden" value="Policy: ">
-        <input class="input" type="text" placeholder="https://example.com/security-policy.html" name="text4">
-        <p>Signature: <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt-03#section-3.5">(description)</a></p><input name="signature" type="hidden" value="Signature: ">
-        <input class="input" type="text" placeholder="https://example.com/.well-known/security.txt.sig" name="text5">
-        <p>Hiring: <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt-03#section-3.8">(description)</a></p><input name="hiring" type="hidden" value="Hiring: ">
-        <input class="input" type="text" placeholder="https://example.com/jobs.html" name="text6">
-        <br>
-        <input class="button button-primary" type="submit" value="Generate security.txt file">
-      </form>
+ 
     </div>
   </section>
 
@@ -111,6 +94,45 @@
     <div class="container is-fluid">
       <h1 class="title">Step 2</h1>
       <p>You are ready to go! Publish your security.txt file.</p>
+		<form id="genform">
+			<p>Contact: <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt-03#section-3.3">(		description)</a>*</p>
+			<input name="contact" class="input" placeholder="security@example.com">
+			<p>Encryption: <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt-03#section-3.4">(		description)</a></p>
+			<input name="encryption" class="input" placeholder="https://example.com/pgp-key.txt">
+			<p>Acknowledgements: <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt-03#section-3.7">		(description)</a></p>
+			<input name="acknowledgements" class="input" placeholder="https://example.com/acknowledgements.html">
+			<p>Policy: <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt-03#section-3.6">(		description)</a></p>
+			<input name="policy" class="input" placeholder="https://example.com/security-policy.html">
+			<p>Signature: <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt-03#section-3.5">(		description)</a></p>
+			<input name="signature" class="input" placeholder="https://example.com/.well-known/security.txt.sig">
+			<p>Hiring: <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt-03#section-3.8">(		description)</a></p>
+			<input name="hiring" class="input" placeholder="https://example.com/jobs.html">
+			<input class="button button-primary" type="submit" value="Generate security.txt file">
+			<a id='dwnld' download style="display:none;"></a>
+		</form>
+
+		<script>
+		genform.addEventListener("submit", function(event){
+				event.preventDefault();
+				download('security.txt', [this['contact'], this['encryption'], this['acknowledgements'], this['policy'], this['signature'], 		this['hiring']]);
+			}
+		)
+		
+		function download(filename, field_array){
+			list = field_array;
+			text = "";
+		
+			list.forEach(function(e){
+				if(e.value.length > 0) {
+					name = e.name;
+					text += name[0].toUpperCase() + name.slice(1) + ": " + e.value + "\n";
+		        }
+			})
+		
+			dwnld.href = "data:text/plain," + text;
+			dwnld.click();
+		}
+		</script>
     </div>
   </section>
 
