@@ -27,6 +27,7 @@
   <meta name="og:site_name" content="security.txt">
   <meta name="og:locale" content="en_US">
   <meta name="og:type" content="website">
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <style>
@@ -36,24 +37,38 @@
       background-position: center;
       background-repeat: no-repeat;
     }
-    
+
     img {
       display: block;
       margin: 0 auto;
     }
+
     form p {
       margin-bottom: 5px;
     }
+
     .input {
       margin-bottom: 20px;
     }
 
+    #text-to-copy {
+      height: 220px;
+      margin-top: 1em;
+    }
+
+    #text-to-copy.copy {
+      margin: 0;
+      height: 0px;
+      width: 0px;
+      overflow: hidden;
+      position: absolute;
+    }
+
     /* Extra CSS for Notifications. */
-    
+
     #txt-notification h1 {
       font-size: 25px;
     }
-
 
     #txt-notification {
       position: fixed;
@@ -73,17 +88,6 @@
     @keyframes fadeOut {
         0% {opacity: 1;}
       100% {opacity: 0;}
-    }
-
-    #text-to-copy {
-      outline: none;
-      border: none;
-      width: 3px;
-      height: 3px;
-      position: absolute;
-
-      background-color: transparent;
-      color: transparent;
     }
   </style>
 </head>
@@ -129,12 +133,14 @@
       <p>Create a text file called <code>security.txt</code> under the <code>.well-known</code> directory of your project.</p>
       <br>
       <form id="genform">
-        <p>Contact: <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt-04#section-3.4.2">(description)</a>*</p>
-        <input name="contact" class="input" placeholder="security@example.com">
+        <p>Contact: <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt-04#section-3.4.2">(description)</a> *</p>
+        <input name="contact" class="input" placeholder="security@example.com" required>
         <p>Encryption: <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt-04#section-3.4.3">(description)</a></p>
         <input name="encryption" class="input" placeholder="https://example.com/pgp-key.txt">
-        <p>Acknowledgements: <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt-04#section-3.4.1">    (description)</a></p>
+        <p>Acknowledgements: <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt-04#section-3.4.1">(description)</a></p>
         <input name="acknowledgements" class="input" placeholder="https://example.com/acknowledgements.html">
+        <p>Permission: <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt-04#section-3.4.5">(description)</a></p>
+        <input name="permission" class="input" placeholder="none">
         <p>Policy: <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt-04#section-3.4.6">(description)</a></p>
         <input name="policy" class="input" placeholder="https://example.com/security-policy.html">
         <p>Signature: <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt-04#section-3.4.7">(description)</a></p>
@@ -150,6 +156,7 @@
     <div class="container is-fluid">
       <h1 class="title">Step 2</h1>
       <p>You are ready to go! Publish your security.txt file.</p>
+      <textarea id="text-to-copy" class="copy" readonly></textarea>
     </div>
   </section>
 
@@ -172,7 +179,7 @@
       <h1 class="title">
         Spread the word
       </h1>
-      <a class="button is-info" href="https://twitter.com/intent/tweet?text=security.txt%20-%20A%20proposed%20standard%20that%20allows%20websites%20to%20define%20security%20policies.%20https%3A%2F%2Fsecuritytxt.org%2F">Share on Twitter 📣 🎉 ⚡️ 🔥</a>
+      <a target="_blank" class="button is-info" href="https://twitter.com/intent/tweet?text=security.txt%20-%20A%20proposed%20standard%20that%20allows%20websites%20to%20define%20security%20policies.%20https%3A%2F%2Fsecuritytxt.org%2F">Share on Twitter 📣 🎉 ⚡️ 🔥</a>
     </div>
   </section>
 
@@ -185,37 +192,41 @@
       </div>
     </div>
   </footer>
-  <textarea id="text-to-copy"></textarea>
   <script>
-  genform.addEventListener("submit", function(event){
-    event.preventDefault();
-      generate('security.txt', [this['contact'], this['encryption'], this['acknowledgements'], this['policy'], this['signature'],     this['hiring']]);
-      showNotification();
-    }
-  )
-    
-  function generate(filename, field_array){
-    list = field_array;
-    text = "";
-  
-    list.forEach(function(e){
-      if(e.value.length > 0) {
-        name = e.name;
-        text += name[0].toUpperCase() + name.slice(1) + ": " + e.value + "\n";
+    genform.addEventListener("submit", function(event){
+      event.preventDefault();
+        generate('security.txt', [this['contact'], this['encryption'], this['acknowledgements'], this['permission'], this['policy'], this['signature'], this['hiring']]);
       }
-    })
-    
-    copy(text);
-  }
+    )
 
-  function copy(text) {
-    elem = document.getElementById("text-to-copy");
-    elem.value = text;
+    function generate(filename, field_array){
+      list = field_array;
+      text = "";
 
-    elem.select();
-    document.execCommand("copy");
-    window.getSelection().empty();
-  }
+      list.forEach(function(e){
+        if(e.value.length > 0) {
+          name = e.name;
+          text += name[0].toUpperCase() + name.slice(1) + ": " + e.value + "\n";
+        }
+      })
+
+      copy(text);
+    }
+
+    function copy(text) {
+      elem = document.getElementById("text-to-copy");
+      elem.value = text;
+
+      if(document.queryCommandSupported("copy")){
+        elem.select();
+        document.execCommand("copy");
+        window.getSelection().empty();
+        showNotification();
+      } else {
+        elem.classList.remove("copy");
+        elem.classList.add("textarea");
+      }
+    }
   </script>
   <script>
     notification = document.getElementById("txt-notification");
@@ -225,7 +236,7 @@
         notification.style = "opacity: 0;";
         notification.removeEventListener("animationend", reset);
       };
-      
+
       notification.addEventListener("animationend", reset)
       notification.style = "animation-name: fadeOut; animation-duration: 1s;";
     }
@@ -235,7 +246,7 @@
         notification.style = "opacity: 1;";
         notification.removeEventListener("animationend", reset);
       };
-      
+
       notification.addEventListener("animationend", reset)
       notification.style = "animation-name: fadeIn; animation-duration: 1s;";
     }
