@@ -1,35 +1,28 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>security.txt attack vector challenge</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css">
-</head>
-<body>
-  <section class="section">
-    <div class="container is-fluid">
-      <h1 class="title">security.txt attack vector challenge</h1>
-      <p>
-        We are looking for some hackers to come up with some
-        potential attack vectors against security.txt files
-        so that we can have a clear overview of what defense
-        mechanisms need to be in place to protect security.txt
-        files (<a href="https://github.com/securitytxt/security-txt/issues/112">https://github.com/securitytxt/security-txt/issues/112</a>).<br>
-      </p>
-      <br>
-      <form method="POST" action="https://formspree.io/contact@edoverflow.com">
-        <div class="field">
-          <input name="email" class="input" placeholder="Your email" type="email" style="width: 70vw;">
-        </div>
+---
+layout: default
+title: "Attack vector challenge"
+active: 3
+---
+<section class="section">
+    <div class="container">
+        <p>
+            We are looking for some hackers to come up with some potential attack vectors against security.txt files so that
+            we can have a clear overview of what defense mechanisms need to be in place to protect security.txt files
+            (<a href="https://github.com/securitytxt/security-txt/issues/112">https://github.com/securitytxt/security-txt/issues/112</a>).
+        </p>
         <br>
-        <div class="field">
-          <textarea name="message" class="input" placeholder="Your attack vector" style="width: 70vw; height: 60vh;"></textarea>
-        </div>
-        <br>
-        <button type="submit" class="button button-primary">Send</button>
-      </form>
+        <form method="POST" action="https://formspree.io/contact@edoverflow.com">
+            <div class="field">
+                <div class="control">
+                    <input name="email" class="input" placeholder="Your email" type="email">
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <textarea name="message" class="textarea" placeholder="Your attack vector" style="height: 60vh;"></textarea>
+                </div>
+            </div>
+            <button type="submit" class="button button-primary">Send</button>
+        </form>
     </div>
-  </section>
-</body>
-</html>
+</section>

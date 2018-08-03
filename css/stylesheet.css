@@ -1,121 +1,101 @@
+/* Layout */
+
+html {
+    overflow: auto;
+}
+
 body {
-	word-wrap: break-word;
-  	overflow-wrap: break-word;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
 
-.wrapper {
-	width: 80%;
-	margin: 0 auto;
+#wrapper {
+    flex: 1;
 }
 
-.section {
-	padding: 50px 0;
-	width: 100%;
+/* Nav */
+
+.hero-head .navbar-item.title {
+    color: #363636;
+    margin-bottom: 0;
 }
 
-.section h3	{
-	margin: 0 auto 30px auto;
-	padding-bottom: 10px;
-	border-bottom: 2px solid #6bd3b8;
-	display: inline-block;
+.hero-head .navbar-burger {
+    height: initial;
+    align-items: stretch;
 }
 
-.landing {
-	color: #fff;
-	padding: 65px 0;
-	text-align: center;
-	background: linear-gradient(
-      rgba(84, 57, 119, 0.5),
-      rgba(84, 57, 119, 0.5)
-    ),
-    url("../img/background.jpg");
-	background-size: cover;
-	background-repeat: no-repeat;
+/* Index */
+
+.index .hero {
+    background-image: url("https://user-images.githubusercontent.com/18099289/38436955-58d160b2-39d6-11e8-9086-c5a9f5eb416a.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-.landing h1 {
-	font-size: 3.2em;
-	font-weight: bold;
-	font-family: 'Playfair Display', serif;
+.index .hero-head .navbar-item.title {
+    opacity: 0;
 }
 
-.landing pre {
-	text-align: left;
-	font-size: 0.9em;
-	color: #eee;
+.index .hero.is-light .hero-body a:not(.button):not(.dropdown-item):not(.tag) {
+    color: #3273dc;
 }
 
-.landing code {
-	background-color: #333;
-	white-space: pre-wrap;
+.index .hero.is-light .hero-body a:not(.button):not(.dropdown-item):not(.tag):hover {
+    color: inherit;
 }
 
-@media (min-width: 750px) {
-	.landing h1 {
-		font-size: 6.5em;
-		font-weight: bold;
-		font-family: 'Playfair Display', serif;
-	}
-	.landing pre {
-		text-align: left;
-		font-size: 1.4em;
-		color: #eee;
-	}
+.index .hero-foot img {
+    display: block;
+    margin: 0 auto;
 }
 
-.button {
-	background-color: #fff;
-	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-	border: none;
-	border-radius: 2px;
-	-webkit-transition: all 250ms;
-	-moz-transition: all 250ms;
-	transition: all 250ms;
+#genform .field {
+    margin-bottom: 20px;
 }
 
-.button:hover {
-	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+#genform label {
+    display: block;
+    margin-bottom: 5px;
 }
 
-input[type="submit"].button-primary,
-.button.button-primary {
-	background-color: #6bd3b8;
-	border: none;
-	border-radius: 2px;
+#text-to-copy {
+    height: 220px;
+    margin-top: 1em;
 }
 
-input[type="submit"].button-primary:hover,
-.button.button-primary:hover {
-	background-color: #6bd3b8;
-    border-color: #6bd3b8;
+#text-to-copy.copy {
+    margin: 0;
+    height: 0px;
+    width: 0px;
+    overflow: hidden;
+    position: absolute;
 }
 
-#about {
-	background-color: #eee;
+/* Extra CSS for Notifications */
+
+#txt-notification h1 {
+    font-size: 25px;
 }
 
-#generate p {
-	margin-bottom: 10px;
+#txt-notification {
+    position: fixed;
+    display: none;
+    opacity: 0;
+    transition: opacity 1s;
+    text-align: center;
+    top: 5px;
+    right: 5px;
+    width: 300px;
+    z-index: 3;
 }
 
-#generate input {
-	margin-bottom: 25px;
+#txt-notification.visible {
+    display: block;
 }
 
-#generate input:focus {
-	border: 1.5px solid #6bd3b8;
-}
-
-#share {
-	text-align: center;
-	background-color: #eee;
-}
-
-#share .button.button-primary {
-	background-color: #1da1f2;
-}
-
-#share p {
-    margin-top: 20px;
-    font-size: 12px;
+#txt-notification.opaque {
+    opacity: 1;
 }
