@@ -5,11 +5,21 @@ genform.addEventListener("submit", function(event){
 
 function generate(filename, field_array){
     text = "";
+    
+    // Converts camel case like 'abcDefGhi' into
+    // the format 'Abc-Def-Ghi'
+    function camelToHyphen(camelCaseWord) {
+      var components = camelCaseWord.split(/(?=[A-Z])/) // abcDef => [abc, Def]
+      
+      return components.map(function (component) {
+        return component[0].toUpperCase() + component.slice(1) // ABC => Abc
+      }).join('-')
+    }
 
     field_array.forEach(function(e){
         if(e.value.length > 0){
             name = e.name;
-            text += name[0].toUpperCase() + name.slice(1) + ": " + e.value + "\n";
+            text += camelToHyphen(name) + ": " + e.value + "\n";
         }
     });
 
