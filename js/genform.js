@@ -1,6 +1,6 @@
 genform.addEventListener("submit", function(event){
     event.preventDefault();
-    generate('security.txt', [this['contact'], this['encryption'], this['acknowledgements'], this['permission'], this['policy'], this['signature'], this['hiring']]);
+    generate('security.txt', [this.contact, this.encryption, this.acknowledgements, this.permission, this.policy, this.signature, this.hiring]);
 });
 
 function generate(filename, field_array){
