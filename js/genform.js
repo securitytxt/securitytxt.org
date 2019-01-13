@@ -1,6 +1,9 @@
 genform.addEventListener("submit", function(event){
     event.preventDefault();
-    generate('security.txt', [this.contact, this.encryption, this.acknowledgements, this.permission, this.policy, this.signature, this.hiring]);
+    generate('security.txt', [
+        this.contact, this.encryption, this.acknowledgements,
+        this.preferredLanguages, this.canonical, this.policy, this.hiring
+    ]);
 });
 
 function generate(filename, field_array){
@@ -16,7 +19,8 @@ function generate(filename, field_array){
       }).join('-')
     }
 
-    field_array.forEach(function(e){
+    field_array.forEach(function(e, i){
+        console.log(i)
         if(e.value.length > 0){
             name = e.name;
             text += camelToHyphen(name) + ": " + e.value + "\n";
