@@ -7,7 +7,7 @@ genform.addEventListener("submit", function(event){
 });
 
 function generate(filename, field_array){
-    text = "";
+    var text = "";
     
     // Converts camel case like 'abcDefGhi' into
     // the format 'Abc-Def-Ghi'
@@ -19,10 +19,9 @@ function generate(filename, field_array){
       }).join('-')
     }
 
-    field_array.forEach(function(e, i){
-        console.log(i)
+    field_array.forEach(function(e){
         if(e.value.length > 0){
-            name = e.name;
+            var name = e.name;
             text += camelToHyphen(name) + ": " + e.value + "\n";
         }
     });
@@ -31,7 +30,7 @@ function generate(filename, field_array){
 }
 
 function copy(text){
-    elem = document.getElementById("text-to-copy");
+    var elem = document.getElementById("text-to-copy");
     elem.value = text;
 
     if(document.queryCommandSupported("copy")){
