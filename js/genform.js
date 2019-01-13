@@ -4,10 +4,9 @@ genform.addEventListener("submit", function(event){
 });
 
 function generate(filename, field_array){
-    list = field_array;
     text = "";
 
-    list.forEach(function(e){
+    field_array.forEach(function(e){
         if(e.value.length > 0){
             name = e.name;
             text += name[0].toUpperCase() + name.slice(1) + ": " + e.value + "\n";
