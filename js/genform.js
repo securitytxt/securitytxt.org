@@ -1,7 +1,7 @@
 genform.addEventListener("submit", function(event){
     event.preventDefault();
     generate('security.txt', [
-        this.contact, this.encryption, this.acknowledgements,
+        this.contact, this.encryption, this.acknowledgments,
         this.preferredLanguages, this.canonical, this.policy, this.hiring
     ]);
 });
