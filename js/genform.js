@@ -1,16 +1,28 @@
 genform.addEventListener("submit", function(event){
     event.preventDefault();
-    generate('security.txt', [this['contact'], this['encryption'], this['acknowledgements'], this['permission'], this['policy'], this['signature'], this['hiring']]);
+    generate('security.txt', [
+        this.contact, this.encryption, this.acknowledgments,
+        this.preferredLanguages, this.canonical, this.policy, this.hiring
+    ]);
 });
 
 function generate(filename, field_array){
-    list = field_array;
-    text = "";
+    var text = "";
+    
+    // Converts camel case like 'abcDefGhi' into
+    // the format 'Abc-Def-Ghi'
+    function camelToHyphen(camelCaseWord) {
+      var components = camelCaseWord.split(/(?=[A-Z])/) // abcDef => [abc, Def]
+      
+      return components.map(function (component) {
+        return component[0].toUpperCase() + component.slice(1) // ABC => Abc
+      }).join('-')
+    }
 
-    list.forEach(function(e){
+    field_array.forEach(function(e){
         if(e.value.length > 0){
-            name = e.name;
-            text += name[0].toUpperCase() + name.slice(1) + ": " + e.value + "\n";
+            var name = e.name;
+            text += camelToHyphen(name) + ": " + e.value + "\n";
         }
     });
 
@@ -18,7 +30,7 @@ function generate(filename, field_array){
 }
 
 function copy(text){
-    elem = document.getElementById("text-to-copy");
+    var elem = document.getElementById("text-to-copy");
     elem.value = text;
 
     if(document.queryCommandSupported("copy")){
