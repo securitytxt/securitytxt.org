@@ -46,7 +46,13 @@ function copyTextarea(){
 }
 
 function scrollToStepTwo() {
-  document.getElementById("step-two").scrollIntoView({behavior: "smooth"})
+  var stepTwo = document.getElementById("step-two")
+
+  if (stepTwo.scrollIntoView) {
+    stepTwo.scrollIntoView({behavior: "smooth"})
+  } else {
+    location.hash = "step-two"
+  }
 }
 
 notification = document.getElementById("txt-notification");
