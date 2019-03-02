@@ -6,6 +6,8 @@ genform.addEventListener("submit", function(event){
         this.contact, this.encryption, this.acknowledgments,
         this.preferredLanguages, this.canonical, this.policy, this.hiring
     ]);
+
+    scrollToStepTwo()
 });
 
 function generate(filename, field_array){
@@ -41,6 +43,10 @@ function copyTextarea(){
 
     window.getSelection().empty();
     showNotification();
+}
+
+function scrollToStepTwo() {
+  document.getElementById("step-two").scrollIntoView({behavior: "smooth"})
 }
 
 notification = document.getElementById("txt-notification");
