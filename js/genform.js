@@ -16,11 +16,11 @@ function generate(filename, field_array){
     // Converts camel case like 'abcDefGhi' into
     // the format 'Abc-Def-Ghi'
     function camelToHyphen(camelCaseWord) {
-      var components = camelCaseWord.split(/(?=[A-Z])/) // abcDef => [abc, Def]
-      
-      return components.map(function (component) {
-        return component[0].toUpperCase() + component.slice(1) // ABC => Abc
-      }).join('-')
+        var components = camelCaseWord.split(/(?=[A-Z])/) // abcDef => [abc, Def]
+
+        return components.map(function (component) {
+          return component[0].toUpperCase() + component.slice(1) // ABC => Abc
+        }).join('-')
     }
 
     field_array.forEach(function(e){
@@ -33,7 +33,7 @@ function generate(filename, field_array){
     textareaElement.value = text;
 
     if (document.queryCommandSupported("copy")) {
-      document.getElementById("copy-button").removeAttribute("disabled")
+        document.getElementById("copy-button").removeAttribute("disabled")
     }
 }
 
@@ -49,9 +49,9 @@ function scrollToStepTwo() {
   var stepTwo = document.getElementById("step-two")
 
   if (stepTwo.scrollIntoView) {
-    stepTwo.scrollIntoView({behavior: "smooth"})
+      stepTwo.scrollIntoView({behavior: "smooth"})
   } else {
-    location.hash = "step-two"
+      location.hash = "step-two"
   }
 }
 
