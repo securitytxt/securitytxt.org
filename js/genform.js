@@ -1,3 +1,5 @@
+textareaElement = document.getElementById("text-to-copy");
+
 genform.addEventListener("submit", function(event){
     event.preventDefault();
     generate('security.txt', [
@@ -26,22 +28,19 @@ function generate(filename, field_array){
         }
     });
 
-    copy(text);
+    textareaElement.value = text;
+
+    if (document.queryCommandSupported("copy")) {
+      document.getElementById("copy-button").removeAttribute("disabled")
+    }
 }
 
-function copy(text){
-    var elem = document.getElementById("text-to-copy");
-    elem.value = text;
+function copyTextarea(){
+    textareaElement.select();
+    document.execCommand("copy");
 
-    if(document.queryCommandSupported("copy")){
-        elem.select();
-        document.execCommand("copy");
-        window.getSelection().empty();
-        showNotification();
-    } else {
-        elem.classList.remove("copy");
-        elem.classList.add("textarea");
-    }
+    window.getSelection().empty();
+    showNotification();
 }
 
 notification = document.getElementById("txt-notification");
