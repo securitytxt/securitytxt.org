@@ -29,48 +29,195 @@ active: 1
         <p>Create a text file called <code>security.txt</code> under the <code>.well-known</code> directory of your project.</p>
         <br>
         <form id="genform">
-            <div class="field">
-                <label for="contact">Contact: <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt#section-3.5.3">(description)</a> *</label>
-                <div class="control">
-                    <input name="contact" id="contact" class="input" placeholder="mailto:security@example.com" required>
+            <fieldset class="box" id="contact">
+                <legend class="label">
+                    Contact
+                    <span class="tag is-danger">Required</span>
+                </legend>
+                <p class="help">A link or e-mail address for people to contact you about security issues. Remember to include "https://" for URLs, and "mailto:" for e-mails. See
+                  <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt#section-3.5.3">
+                      the full description of Contact
+                  </a>
+                </p>
+                <ul class="list-of-inputs">
+                    <li class="field">
+                        <div class="control">
+                            <input class="input" placeholder="mailto:security@example.com" required>
+                        </div>
+                    </li>
+                </ul>
+                <div class="field">
+                    <div class="control">
+                        <button type="button" class="button" onclick="addAlternative(this)">
+                            Add another alternative
+                        </button>
+                    </div>
                 </div>
-            </div>
-            <div class="field">
-                <label for="encryption">Encryption: <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt#section-3.5.4">(description)</a></label>
-                <div class="control">
-                    <input name="encryption" id="encryption" class="input" placeholder="https://example.com/pgp-key.txt">
+            </fieldset>
+            <fieldset class="box" id="encryption">
+                <legend class="label">
+                    Encryption
+                    <span class="tag is-success">Optional</span>
+                </legend>
+                <p class="help">
+                    A key which security researchers should use to securely talk to you. Remember to include "https://". See
+                    <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt#section-3.5.4">
+                        the full description of Encryption
+                    </a>
+                </p>
+                <ul class="list-of-inputs">
+                    <li class="field">
+                        <div class="control">
+                            <input class="input" placeholder="https://example.com/pgp-key.txt">
+                        </div>
+                    </li>
+                </ul>
+                <div class="field">
+                    <div class="control">
+                        <button type="button" class="button" onclick="addAlternative(this)">
+                            Add another alternative
+                        </button>
+                    </div>
                 </div>
-            </div>
-            <div class="field">
-                <label for="acknowledgments">Acknowledgments: <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt#section-3.5.1">(description)</a></label>
-                <div class="control">
-                    <input name="acknowledgments" id="acknowledgments" class="input" placeholder="https://example.com/hall-of-fame.html">
+            </fieldset>
+            <fieldset class="box" id="acknowledgments">
+                <legend class="label">
+                    Acknowledgments
+                    <span class="tag is-success">Optional</span>
+                </legend>
+                <p class="help">
+                    A link to a web page where you say thank you to security researchers who have helped you. Remember
+                    to include "https://". See
+                    <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt#section-3.5.1">
+                        the full description of Acknowledgments
+                    </a>
+                </p>
+                <ul class="list-of-inputs">
+                    <li class="field">
+                        <div class="control">
+                            <input class="input" placeholder="https://example.com/hall-of-fame.html">
+                        </div>
+                    </li>
+                </ul>
+                <div class="field">
+                    <div class="control">
+                        <button type="button" class="button" onclick="addAlternative(this)">
+                            Add another alternative
+                        </button>
+                    </div>
                 </div>
-            </div>
-            <div class="field">
-                <label for="preferredLanguages">Preferred-Languages: <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt#section-3.5.7">(description)</a></label>
-                <div class="control">
-                    <input name="preferredLanguages" id="preferredLanguages" class="input" placeholder="en, es, ru">
+            </fieldset>
+            <fieldset class="box" id="preferredLanguages">
+                <legend class="label">
+                    Preferred-Languages
+                    <p class="tag is-success">Optional</p>
+                    <p class="tag is-info">Only 1 allowed</p>
+                </legend>
+                <p class="help">
+                    A comma-separated list of language codes that your security team speaks. <strong>You may include
+                    more than one language</strong>. See
+                    <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt#section-3.5.7">
+                        the full description of Preferred-Languages
+                    </a>
+                </p>
+                <ul class="list-of-inputs">
+                    <li class="field">
+                        <div class="control">
+                            <input class="input" placeholder="en, es, ru">
+                        </div>
+                    </li>
+                </ul>
+                <div class="field">
+                    <div class="control">
+                        <button type="button" class="button" onclick="addAlternative(this)" disabled>
+                            Add another alternative
+                        </button>
+                    </div>
                 </div>
-            </div>
-            <div class="field">
-                <label for="canonical">Canonical: <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt#section-3.5.2">(description)</a></label>
-                <div class="control">
-                    <input name="canonical" id="canonical" class="input" placeholder="https://example.com/.well-known/security.txt">
+            </fieldset>
+            <fieldset class="box" id="canonical">
+                <legend class="label">
+                    Canonical
+                    <p class="tag is-success">Optional</p>
+                    <p class="tag is-info">Only 1 allowed</p>
+                </legend>
+                <p class="help">
+                    The most common URL for accessing your security.txt file. It is important to include this if you
+                    are digitally signing the security.txt file, so that researchers can know for sure that you didn't
+                    just steal someone else's file with the same content. See
+                    <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt#section-3.5.2">
+                        the full description of Canonical
+                    </a>
+                </p>
+                <ul class="list-of-inputs">
+                    <li class="field">
+                        <div class="control">
+                            <input class="input" placeholder="https://example.com/.well-known/security.txt">
+                        </div>
+                    </li>
+                </ul>
+                <div class="field">
+                    <div class="control">
+                        <button type="button" class="button" onclick="addAlternative(this)" disabled>
+                            Add another alternative
+                        </button>
+                    </div>
                 </div>
-            </div>
-           <div class="field">
-                <label for="policy">Policy: <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt#section-3.5.6">(description)</a></label>
-                <div class="control">
-                    <input name="policy" id="policy" class="input" placeholder="https://example.com/security-policy.html">
+            </fieldset>
+            <fieldset class="box" id="policy">
+                <legend class="label">
+                    Policy
+                    <p class="tag is-success">Optional</p>
+                </legend>
+                <p class="help">
+                    A link to a policy detailing what security researchers should do when searching for or reporting
+                    security issues. Remember to include "https://". See
+                    <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt#section-3.5.6">
+                        the full description of Policy
+                    </a>
+                </p>
+                <ul class="list-of-inputs">
+                    <li class="field">
+                        <div class="control">
+                            <input class="input" placeholder="https://example.com/security-policy.html">
+                        </div>
+                    </li>
+                </ul>
+                <div class="field">
+                    <div class="control">
+                        <button type="button" class="button" onclick="addAlternative(this)">
+                            Add another alternative
+                        </button>
+                    </div>
                 </div>
-            </div>
-            <div class="field">
-                <label for="hiring">Hiring: <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt#section-3.5.5">(description)</a></label>
-                <div class="control">
-                    <input name="hiring" id="hiring" class="input" placeholder="https://example.com/jobs.html">
+            </fieldset>
+            <fieldset class="box" id="hiring">
+                <legend class="label">
+                    Hiring
+                    <p class="tag is-success">Optional</p>
+                </legend>
+                <p class="help">
+                    A link to any security-related job openings in your organisation. Remember to include "https://".
+                    See
+                    <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt#section-3.5.5">
+                        the full description of Hiring
+                    </a>
+                </p>
+                <ul class="list-of-inputs">
+                    <li class="field">
+                        <div class="control">
+                            <input class="input" placeholder="https://example.com/jobs.html">
+                        </div>
+                    </li>
+                </ul>
+                <div class="field">
+                    <div class="control">
+                        <button type="button" class="button" onclick="addAlternative(this)">
+                            Add another alternative
+                        </button>
+                    </div>
                 </div>
-            </div>
+            </fieldset>
             <input class="button button-primary" type="submit" value="Generate security.txt file">
         </form>
     </div>

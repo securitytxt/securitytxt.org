@@ -56,9 +56,15 @@ body {
     margin-bottom: 20px;
 }
 
-#genform label {
-    display: block;
-    margin-bottom: 5px;
+#genform fieldset.box {
+  border: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+#genform fieldset.box > legend {
+  background-color: white;
+  padding: 0 7px;
 }
 
 #text-to-copy {
