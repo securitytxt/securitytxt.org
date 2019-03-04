@@ -7,37 +7,43 @@ directive_tags:
     Optional: is-success
     Only 1 allowed: is-info
 directives:
-    Contact:
+    -
+        name: Contact
+        id: contact
         tags: ['Required']
         help: >
             A link or e-mail address for people to contact you about security issues. Remember to include "https://"
             for URLs, and "mailto:" for e-mails.
         placeholder: mailto:security@example.com
         spec: 3
-        id: contact
-    Encryption:
+    -
+        name: Encryption
+        id: encryption
         tags: ['Optional']
         help: A link to a key which security researchers should use to securely talk to you. Remember to include "https://".
         placeholder: https://example.com/pgp-key.txt
         spec: 4
-        id: encryption
-    Acknowledgments:
+    -
+        name: Acknowledgments
+        id: acknowledgments
         tags: ['Optional']
         help: >
             A link to a web page where you say thank you to security researchers who have helped you. Remember
             to include "https://".
         placeholder: https://example.com/hall-of-fame.html
         spec: 1
-        id: acknowledgments
-    Preferred-Languages:
+    -
+        name: Preferred-Languages
+        id: preferredLanguages
         tags: ['Optional', 'Only 1 allowed']
         help: >
             A comma-separated list of language codes that your security team speaks. <strong>You may include more
             than one language</strong>.
         placeholder: en, es, ru
         spec: 7
-        id: preferredLanguages
-    Canonical:
+    -
+        name: Canonical
+        id: canonical
         tags: ['Optional', 'Only 1 allowed']
         help: >
             The most common URL for accessing your security.txt file. It is important to include this if you are
@@ -45,21 +51,22 @@ directives:
             someone else's file with the same content.
         placeholder: https://example.com/.well-known/security.txt
         spec: 2
-        id: canonical
-    Policy:
+    -
+        name: Policy
+        id: policy
         tags: ['Optional']
         help: >
             A link to a policy detailing what security researchers should do when searching for or reporting security
             issues. Remember to include "https://".
         placeholder: https://example.com/security-policy.html
         spec: 6
-        id: policy
-    Hiring:
+    -
+        name: Hiring
+        id: hiring
         tags: ['Optional']
         help: A link to any security-related job openings in your organisation. Remember to include "https://".
         placeholder: https://example.com/jobs.html
         spec: 5
-        id: hiring
 ---
 
 <div id="txt-notification">
@@ -89,27 +96,25 @@ directives:
         <br>
         <form id="genform">
             {% for directive in page.directives %}
-                {% assign directive_name = directive[0] %}
-                {% assign directive_info = directive[1] %}
-                <fieldset class="box" id="{{directive_info.id}}">
+                <fieldset class="box" id="{{directive.id}}">
                     <legend class="label">
-                        {{ directive_name }}
-                        {% for tag in directive_info.tags %}
+                        {{ directive.name }}
+                        {% for tag in directive.tags %}
                             <span class="tag {{ page.directive_tags[tag] }}">{{ tag }}</span>
                         {% endfor %}
                     </legend>
                     <p class="help">
-                        {{ directive_info.help }} See 
+                        {{ directive.help }} See 
                         <a target="_blank" rel="noopener" 
-                           href="https://tools.ietf.org/html/draft-foudil-securitytxt#section-3.5.{{directive_info.spec}}">
-                            the full description of {{ directive_name }}
+                           href="https://tools.ietf.org/html/draft-foudil-securitytxt#section-3.5.{{directive.spec}}">
+                            the full description of {{ directive.name }}
                         </a>
                     </p>
                     <ul class="list-of-inputs">
                         <li class="field">
                             <div class="control">
-                                <input class="input" placeholder="{{ directive_info.placeholder }}"
-                                       {% if directive_info.tags contains 'Required' %} required {% endif %}
+                                <input class="input" placeholder="{{ directive.placeholder }}"
+                                       {% if directive.tags contains 'Required' %} required {% endif %}
                                 >
                             </div>
                         </li>
@@ -117,7 +122,7 @@ directives:
                     <div class="field">
                         <div class="control">
                             <button type="button" class="button" onclick="addAlternative(this)"
-                                {% if directive_info.tags contains 'Only 1 allowed' %} disabled {% endif %}
+                                {% if directive.tags contains 'Only 1 allowed' %} disabled {% endif %}
                             >
                                 Add another alternative
                             </button>
