@@ -2,7 +2,7 @@
 layout: default
 index: true
 active: 1
-tags:
+directive_tags:
     Required: is-danger
     Optional: is-success
     Only 1 allowed: is-info
@@ -95,7 +95,7 @@ directives:
                     <legend class="label">
                         {{ directive_name }}
                         {% for tag in directive_info.tags %}
-                            <span class="tag {{ page.tags[tag] }}">{{ tag }}</span>
+                            <span class="tag {{ page.directive_tags[tag] }}">{{ tag }}</span>
                         {% endfor %}
                     </legend>
                     <p class="help">
