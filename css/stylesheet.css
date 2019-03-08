@@ -66,14 +66,6 @@ body {
     margin-top: 1em;
 }
 
-#text-to-copy.copy {
-    margin: 0;
-    height: 0px;
-    width: 0px;
-    overflow: hidden;
-    position: absolute;
-}
-
 /* Extra CSS for Notifications */
 
 #txt-notification h1 {

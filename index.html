@@ -78,9 +78,18 @@ active: 1
 
 <section class="section">
     <div class="container">
-        <h1 class="title">Step 2</h1>
+        <h1 class="title" id="step-two">Step 2</h1>
         <p>You are ready to go! Publish your security.txt file.</p>
-        <textarea id="text-to-copy" class="copy" readonly></textarea>
+        <div class="field">
+          <div class="control">
+            <textarea id="text-to-copy" class="textarea" readonly></textarea>
+          </div>
+        </div>
+        <div class="field">
+          <div class="control">
+            <button id="copy-button" class="button button-primary" disabled="true" onclick="copyTextarea()">Copy to clipboard</button>
+          </div>
+        </div>
     </div>
 </section>
 
