@@ -137,9 +137,18 @@ directives:
 
 <section class="section">
     <div class="container">
-        <h1 class="title">Step 2</h1>
+        <h1 class="title" id="step-two">Step 2</h1>
         <p>You are ready to go! Publish your security.txt file. If you want to give security researchers confidence that your security.txt file is authentic, and not planted by an attacker, consider <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt-05#section-3.4">digitally signing</a> the file with an OpenPGP cleartext signature.</p>
-        <textarea id="text-to-copy" class="copy" readonly></textarea>
+        <div class="field">
+          <div class="control">
+            <textarea id="text-to-copy" class="textarea" readonly></textarea>
+          </div>
+        </div>
+        <div class="field">
+          <div class="control">
+            <button id="copy-button" class="button button-primary" disabled="true" onclick="copyTextarea()">Copy to clipboard</button>
+          </div>
+        </div>
     </div>
 </section>
 

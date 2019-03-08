@@ -1,8 +1,12 @@
+textareaElement = document.getElementById("text-to-copy");
+
 genform.addEventListener("submit", function(event){
     event.preventDefault();
     generate('security.txt', [
         "contact", "encryption", "acknowledgments", "preferredLanguages", "canonical", "policy", "hiring"
     ]);
+
+    scrollToStepTwo()
 });
 
 function generate(filename, field_array){
@@ -11,11 +15,11 @@ function generate(filename, field_array){
     // Converts camel case like 'abcDefGhi' into
     // the format 'Abc-Def-Ghi'
     function camelToHyphen(camelCaseWord) {
-      var components = camelCaseWord.split(/(?=[A-Z])/) // abcDef => [abc, Def]
-      
-      return components.map(function (component) {
-        return component[0].toUpperCase() + component.slice(1) // ABC => Abc
-      }).join('-')
+        var components = camelCaseWord.split(/(?=[A-Z])/) // abcDef => [abc, Def]
+
+        return components.map(function (component) {
+          return component[0].toUpperCase() + component.slice(1) // ABC => Abc
+        }).join('-')
     }
 
     field_array.forEach(function(e){
@@ -29,7 +33,11 @@ function generate(filename, field_array){
         });
     });
 
-    copy(text);
+    textareaElement.value = text;
+
+    if (document.queryCommandSupported("copy")) {
+        document.getElementById("copy-button").removeAttribute("disabled")
+    }
 }
 
 function addAlternative(button) {
@@ -67,19 +75,22 @@ function addAlternative(button) {
     newInput.focus()
 }
 
-function copy(text){
-    var elem = document.getElementById("text-to-copy");
-    elem.value = text;
+function copyTextarea(){
+    textareaElement.select();
+    document.execCommand("copy");
 
-    if(document.queryCommandSupported("copy")){
-        elem.select();
-        document.execCommand("copy");
-        window.getSelection().empty();
-        showNotification();
-    } else {
-        elem.classList.remove("copy");
-        elem.classList.add("textarea");
-    }
+    window.getSelection().empty();
+    showNotification();
+}
+
+function scrollToStepTwo() {
+  var stepTwo = document.getElementById("step-two")
+
+  if (stepTwo.scrollIntoView) {
+      stepTwo.scrollIntoView({behavior: "smooth"})
+  } else {
+      location.hash = "step-two"
+  }
 }
 
 notification = document.getElementById("txt-notification");
