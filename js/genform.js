@@ -3,8 +3,7 @@ textareaElement = document.getElementById("text-to-copy");
 genform.addEventListener("submit", function(event){
     event.preventDefault();
     generate('security.txt', [
-        this.contact, this.encryption, this.acknowledgments,
-        this.preferredLanguages, this.canonical, this.policy, this.hiring
+        "contact", "encryption", "acknowledgments", "preferredLanguages", "canonical", "policy", "hiring"
     ]);
 
     scrollToStepTwo()
@@ -24,10 +23,14 @@ function generate(filename, field_array){
     }
 
     field_array.forEach(function(e){
-        if(e.value.length > 0){
-            var name = e.name;
-            text += camelToHyphen(name) + ": " + e.value + "\n";
-        }
+        console.log(e)
+        var inputs = document.getElementById(e).querySelector(".list-of-inputs")
+
+        inputs.querySelectorAll("input").forEach(function(child) {
+            if(child.value.length > 0){
+                text += camelToHyphen(e) + ": " + child.value + "\n";
+            }
+        });
     });
 
     textareaElement.value = text;
@@ -35,6 +38,41 @@ function generate(filename, field_array){
     if (document.queryCommandSupported("copy")) {
         document.getElementById("copy-button").removeAttribute("disabled")
     }
+}
+
+function addAlternative(button) {
+    var list = button.parentElement.parentElement.parentElement.querySelector(".list-of-inputs")
+    
+    var newInput = document.createElement("INPUT")
+    newInput.setAttribute("placeholder", "Another possible alternative")
+    newInput.setAttribute("class", "input")
+
+    var newInputControl = document.createElement("DIV")
+    newInputControl.setAttribute("class", "control is-expanded")
+    newInputControl.appendChild(newInput)
+
+    var removeButton = document.createElement("BUTTON")
+    removeButton.setAttribute("type", "button")
+    removeButton.setAttribute("class", "button is-danger")
+    removeButton.textContent = "Remove"
+    
+    var removeButtonControl = document.createElement("DIV")
+    removeButtonControl.setAttribute("class", "control")
+    removeButtonControl.appendChild(removeButton)
+
+    var overallField = document.createElement("LI")
+    overallField.setAttribute("class", "field is-grouped")
+    overallField.appendChild(newInputControl)
+    overallField.appendChild(removeButtonControl)
+
+    removeButton.addEventListener("click", function() {
+        // not using Element.remove() to maintain support
+        // with Internet Explorer
+        overallField.parentNode.removeChild(overallField)
+    })
+
+    list.appendChild(overallField)
+    newInput.focus()
 }
 
 function copyTextarea(){

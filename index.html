@@ -2,7 +2,73 @@
 layout: default
 index: true
 active: 1
+directive_tags:
+    Required: is-danger
+    Optional: is-success
+    Only 1 allowed: is-info
+directives:
+    -
+        name: Contact
+        id: contact
+        tags: ['Required']
+        help: >
+            A link or e-mail address for people to contact you about security issues. Remember to include "https://"
+            for URLs, and "mailto:" for e-mails.
+        placeholder: mailto:security@example.com
+        spec: 3
+    -
+        name: Encryption
+        id: encryption
+        tags: ['Optional']
+        help: A link to a key which security researchers should use to securely talk to you. Remember to include "https://".
+        placeholder: https://example.com/pgp-key.txt
+        spec: 4
+    -
+        name: Acknowledgments
+        id: acknowledgments
+        tags: ['Optional']
+        help: >
+            A link to a web page where you say thank you to security researchers who have helped you. Remember
+            to include "https://".
+        placeholder: https://example.com/hall-of-fame.html
+        spec: 1
+    -
+        name: Preferred-Languages
+        id: preferredLanguages
+        tags: ['Optional', 'Only 1 allowed']
+        help: >
+            A comma-separated list of language codes that your security team speaks. <strong>You may include more
+            than one language</strong>.
+        placeholder: en, es, ru
+        spec: 7
+    -
+        name: Canonical
+        id: canonical
+        tags: ['Optional', 'Only 1 allowed']
+        help: >
+            The most common URL for accessing your security.txt file. It is important to include this if you are
+            digitally signing the security.txt file, so that researchers can know for sure that you didn't just steal
+            someone else's file with the same content.
+        placeholder: https://example.com/.well-known/security.txt
+        spec: 2
+    -
+        name: Policy
+        id: policy
+        tags: ['Optional']
+        help: >
+            A link to a policy detailing what security researchers should do when searching for or reporting security
+            issues. Remember to include "https://".
+        placeholder: https://example.com/security-policy.html
+        spec: 6
+    -
+        name: Hiring
+        id: hiring
+        tags: ['Optional']
+        help: A link to any security-related job openings in your organisation. Remember to include "https://".
+        placeholder: https://example.com/jobs.html
+        spec: 5
 ---
+
 <div id="txt-notification">
     <div class="notification is-success is-pulled">
         <button onclick="removeNotification()" class="delete"></button>
@@ -29,49 +95,42 @@ active: 1
         <p>Create a text file called <code>security.txt</code> under the <code>.well-known</code> directory of your project.</p>
         <br>
         <form id="genform">
-            <div class="field">
-                <label for="contact">Contact: <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt#section-3.5.3">(description)</a> *</label>
-                <div class="control">
-                    <input name="contact" id="contact" class="input" placeholder="mailto:security@example.com" required>
-                </div>
-            </div>
-            <div class="field">
-                <label for="encryption">Encryption: <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt#section-3.5.4">(description)</a></label>
-                <div class="control">
-                    <input name="encryption" id="encryption" class="input" placeholder="https://example.com/pgp-key.txt">
-                </div>
-            </div>
-            <div class="field">
-                <label for="acknowledgments">Acknowledgments: <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt#section-3.5.1">(description)</a></label>
-                <div class="control">
-                    <input name="acknowledgments" id="acknowledgments" class="input" placeholder="https://example.com/hall-of-fame.html">
-                </div>
-            </div>
-            <div class="field">
-                <label for="preferredLanguages">Preferred-Languages: <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt#section-3.5.7">(description)</a></label>
-                <div class="control">
-                    <input name="preferredLanguages" id="preferredLanguages" class="input" placeholder="en, es, ru">
-                </div>
-            </div>
-            <div class="field">
-                <label for="canonical">Canonical: <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt#section-3.5.2">(description)</a></label>
-                <div class="control">
-                    <input name="canonical" id="canonical" class="input" placeholder="https://example.com/.well-known/security.txt">
-                </div>
-            </div>
-           <div class="field">
-                <label for="policy">Policy: <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt#section-3.5.6">(description)</a></label>
-                <div class="control">
-                    <input name="policy" id="policy" class="input" placeholder="https://example.com/security-policy.html">
-                </div>
-            </div>
-            <div class="field">
-                <label for="hiring">Hiring: <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt#section-3.5.5">(description)</a></label>
-                <div class="control">
-                    <input name="hiring" id="hiring" class="input" placeholder="https://example.com/jobs.html">
-                </div>
-            </div>
-            <input class="button button-primary" type="submit" value="Generate security.txt file">
+            {% for directive in page.directives %}
+                <fieldset class="box" id="{{directive.id}}">
+                    <legend class="label">
+                        {{ directive.name }}
+                        {% for tag in directive.tags %}
+                            <span class="tag {{ page.directive_tags[tag] }}">{{ tag }}</span>
+                        {% endfor %}
+                    </legend>
+                    <p class="help">
+                        {{ directive.help }} See 
+                        <a target="_blank" rel="noopener" 
+                           href="https://tools.ietf.org/html/draft-foudil-securitytxt#section-3.5.{{directive.spec}}">
+                            the full description of {{ directive.name }}
+                        </a>
+                    </p>
+                    <ul class="list-of-inputs">
+                        <li class="field">
+                            <div class="control">
+                                <input class="input" placeholder="{{ directive.placeholder }}"
+                                       {% if directive.tags contains 'Required' %} required {% endif %}
+                                >
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="field">
+                        <div class="control">
+                            <button type="button" class="button" onclick="addAlternative(this)"
+                                {% if directive.tags contains 'Only 1 allowed' %} disabled {% endif %}
+                            >
+                                Add another alternative
+                            </button>
+                        </div>
+                    </div>
+                </fieldset>
+            {% endfor %}
+           <input class="button is-success" type="submit" value="Generate security.txt file">
         </form>
     </div>
 </section>
@@ -79,7 +138,7 @@ active: 1
 <section class="section">
     <div class="container">
         <h1 class="title" id="step-two">Step 2</h1>
-        <p>You are ready to go! Publish your security.txt file.</p>
+        <p>You are ready to go! Publish your security.txt file. If you want to give security researchers confidence that your security.txt file is authentic, and not planted by an attacker, consider <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt-05#section-3.4">digitally signing</a> the file with an OpenPGP cleartext signature.</p>
         <div class="field">
           <div class="control">
             <textarea id="text-to-copy" class="textarea" readonly></textarea>
