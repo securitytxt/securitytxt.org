@@ -24,7 +24,7 @@ The security.txt project accepts donations via [Liberapay](https://liberapay.com
 
 <a href="https://liberapay.com/security.txt/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a>
 
-<a href="https://opencollective.com/securitytxt/donate" target="_blank">
+<a href="https://opencollective.com/securitytxt/donate" target="_blank" rel="noopener">
   <img src="https://opencollective.com/securitytxt/donate/button@2x.png?color=blue" width=300 />
 </a>
 
