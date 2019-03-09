@@ -1,6 +1,6 @@
 # securitytxt.org
 
-![image](https://user-images.githubusercontent.com/18099289/42649227-5bbbb1f4-8609-11e8-988c-ad7b41b8873e.png)
+![The website of the security.txt project, a proposed standard which allows websites to define security policies](https://user-images.githubusercontent.com/18099289/42649227-5bbbb1f4-8609-11e8-988c-ad7b41b8873e.png)
 
 ## Contributing
 
