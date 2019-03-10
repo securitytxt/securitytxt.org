@@ -30,7 +30,7 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-    <link rel="stylesheet" href="{{ "/css/stylesheet.css" | relative_url }}">
+    <link rel="stylesheet" href="{{ "/css/stylesheet.css" | relative_url }}?v={{ site.time | date: "%s" }}">
 </head>
 <body {% if page.index != null %}class="index"{% endif %}>
     <div id="wrapper">
