@@ -87,7 +87,7 @@ function scrollToStepTwo() {
   var stepTwo = document.getElementById("step-two")
 
   if (stepTwo.scrollIntoView) {
-      stepTwo.scrollIntoView({behavior: "smooth"})
+      stepTwo.scrollIntoView({behavior: "smooth", block: "start"})
   } else {
       location.hash = "step-two"
   }
