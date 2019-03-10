@@ -1,6 +1,6 @@
 # securitytxt.org
 
-![image](https://user-images.githubusercontent.com/18099289/42649227-5bbbb1f4-8609-11e8-988c-ad7b41b8873e.png)
+![The website of the security.txt project, a proposed standard which allows websites to define security policies](https://user-images.githubusercontent.com/18099289/42649227-5bbbb1f4-8609-11e8-988c-ad7b41b8873e.png)
 
 ## Contributing
 
@@ -24,7 +24,7 @@ The security.txt project accepts donations via [Liberapay](https://liberapay.com
 
 <a href="https://liberapay.com/security.txt/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a>
 
-<a href="https://opencollective.com/securitytxt/donate" target="_blank">
+<a href="https://opencollective.com/securitytxt/donate" target="_blank" rel="noopener">
   <img src="https://opencollective.com/securitytxt/donate/button@2x.png?color=blue" width=300 />
 </a>
 
