@@ -2,6 +2,8 @@
 
 ![The website of the security.txt project, a proposed standard which allows websites to define security policies](https://user-images.githubusercontent.com/18099289/42649227-5bbbb1f4-8609-11e8-988c-ad7b41b8873e.png)
 
+<a href="https://www.buymeacoffee.com/edoverflow" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/purple_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
+
 ## Contributing
 
 We welcome contributions from the public.
@@ -17,19 +19,3 @@ Our bug tracker utilizes several labels to help organize and identify issues.
 ### Guidelines for bug reports 🐛
 
 Use the GitHub issue search — check if the issue has already been reported.
-
-### Donations
-
-The security.txt project accepts donations via [Liberapay](https://liberapay.com/security.txt) and [Open Collective](https://opencollective.com/securitytxt). The money is used to pay bounties to individuals who report valid security vulnerabilities in the security.txt project.
-
-<a href="https://liberapay.com/security.txt/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a>
-
-<a href="https://opencollective.com/securitytxt/donate" target="_blank" rel="noopener">
-  <img src="https://opencollective.com/securitytxt/donate/button@2x.png?color=blue" width=300 />
-</a>
-
-We also accept Bitcoin and Ethereum donations:
-
-**BTC:** `1E2fZRNrrkCKPnWpKZAsJzByBoyoBURADN`
-
-**ETH:** `0xe98FC23fB4A8762d700c0354979dA5Db6c29Acc3`
