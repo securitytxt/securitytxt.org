@@ -31,6 +31,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <link rel="stylesheet" href="{{ "/css/stylesheet.css" | relative_url }}?v={{ site.time | date: "%s" }}">
+    <script type='application/ld+json'> 
+    {
+      "@context": "http://www.schema.org",
+      "@type": "WebSite",
+      "name": "security.txt",
+      "url": "https://securitytxt.org/"
+    }
+     </script>
 </head>
 <body {% if page.index != null %}class="index"{% endif %}>
     <div id="wrapper">
