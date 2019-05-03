@@ -157,10 +157,12 @@ directives:
         <h1 class="title">Frequently asked questions</h1>
         <h5>What is the main purpose of security.txt?</h5>
         <p>The main purpose of security.txt is to help make things easier for companies and security researchers when trying to secure platforms. Thanks to security.txt, security researchers can easily get in touch with companies about security issues.</p>
-        <h5>Is security.txt an <a href="https://en.wikipedia.org/wiki/Request_for_Comments">RFC</a>?</h5>
-        <p>security.txt is currently an Internet draft that has been submitted for RFC review. This means that security.txt is still in the early stages of development. We welcome contributions from the public: <a href="https://github.com/securitytxt/security-txt">https://github.com/securitytxt/security-txt</a></p>
+        <h5>Is security.txt an <a href="https://en.wikipedia.org/wiki/Request_for_Comments"><abbr title="Request For Comments">RFC</abbr></a>?</h5>
+        <p>security.txt is currently an Internet draft that has been submitted for <abbr title="Request For Comments">RFC</abbr> review. This means that security.txt is still in the early stages of development. We welcome contributions from the public: <a href="https://github.com/securitytxt/security-txt">https://github.com/securitytxt/security-txt</a></p>
         <h5>Where should I put the security.txt file?</h5>
-        <p>The security.txt file should be placed under the <code>/.well-known/</code> path (<code>/.well-known/security.txt</code>) [<a href="https://tools.ietf.org/html/rfc5785">RFC5785</a>].</p>
+        <p>The security.txt file should be placed under the <code>/.well-known/</code> path (<code>/.well-known/security.txt</code>) of a website [<a href="https://tools.ietf.org/html/rfc5785"><abbr title="Request For Comments">RFC</abbr>5785</a>]. It can also be placed in the root directory (<code>/security.txt</code>) of a website or code repository, especially if the <code>/.well-known/</code> directory cannot be used for technical reasons, or just as a fallback. The file can be placed in both locations of a website at the same time.</p>
+				<h5>Are there any settings I should apply to the file?</h5>
+				<p>The security.txt file should have an Internet Media Type of <code>text/plain</code> and should be served over HTTPS.</p>
         <h5>Will adding an email address expose me to spam bots?</h5>
         <p>The email value is an optional field. If you are worried about spam, you can set a URI as the value and link to your security policy.</p>
     </div>
