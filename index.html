@@ -160,9 +160,9 @@ directives:
         <h5>Is security.txt an <a href="https://en.wikipedia.org/wiki/Request_for_Comments"><abbr title="Request For Comments">RFC</abbr></a>?</h5>
         <p>security.txt is currently an Internet draft that has been submitted for <abbr title="Request For Comments">RFC</abbr> review. This means that security.txt is still in the early stages of development. We welcome contributions from the public: <a href="https://github.com/securitytxt/security-txt">https://github.com/securitytxt/security-txt</a></p>
         <h5>Where should I put the security.txt file?</h5>
-        <p>The security.txt file should be placed under the <code>/.well-known/</code> path (<code>/.well-known/security.txt</code>) of a website [<a href="https://tools.ietf.org/html/rfc5785"><abbr title="Request For Comments">RFC</abbr>5785</a>]. It can also be placed in the root directory (<code>/security.txt</code>) of a website or code repository, especially if the <code>/.well-known/</code> directory cannot be used for technical reasons, or just as a fallback. The file can be placed in both locations of a website at the same time.</p>
+        <p>For websites, the security.txt file should be placed under the <code>/.well-known/</code> path (<code>/.well-known/security.txt</code>) [<a href="https://tools.ietf.org/html/rfc5785"><abbr title="Request For Comments">RFC</abbr>5785</a>]. It can also be placed in the root directory (<code>/security.txt</code>) of a website, especially if the <code>/.well-known/</code> directory cannot be used for technical reasons, or simply as a fallback. The file can be placed in both locations of a website at the same time. For code repositories, the file should be placed in the root directory of the repository.</p>
 				<h5>Are there any settings I should apply to the file?</h5>
-				<p>The security.txt file should have an Internet Media Type of <code>text/plain</code> and should be served over HTTPS.</p>
+				<p>The security.txt file should have an Internet Media Type of <code>text/plain</code> and must be served over HTTPS.</p>
         <h5>Will adding an email address expose me to spam bots?</h5>
         <p>The email value is an optional field. If you are worried about spam, you can set a URI as the value and link to your security policy.</p>
     </div>
