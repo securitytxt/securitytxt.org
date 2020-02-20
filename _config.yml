@@ -1,2 +1,5 @@
 include:
 - .well-known
+
+plugins:
+  - jekyll-sitemap
