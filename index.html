@@ -17,6 +17,15 @@ directives:
         placeholder: mailto:security@example.com
         spec: 3
     -
+        name: Expires
+        id: expires
+        tags: ['Required', 'Only 1 allowed']
+        help: >
+            The date and time when the content of the security.txt file should be considered stale (so security
+            researchers should then not trust it). Make sure you update this value periodcally and keep your file under review.
+        spec: 5
+        input: datetime
+    -
         name: Encryption
         id: encryption
         tags: ['Optional']
@@ -113,9 +122,9 @@ directives:
                     <ul class="list-of-inputs">
                         <li class="field">
                             <div class="control">
-                                <input class="input" placeholder="{{ directive.placeholder }}"
-                                       {% if directive.tags contains 'Required' %} required {% endif %}
-                                >
+                               <input data-display="inline" type="{{ directive.input }}" class="input" placeholder="{{ directive.placeholder }}"
+                                   {% if directive.tags contains 'Required' %} required {% endif %}
+                               >
                             </div>
                         </li>
                     </ul>

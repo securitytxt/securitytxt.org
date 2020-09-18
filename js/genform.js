@@ -1,13 +1,50 @@
+// Attach the Bulma calendar
+var YEAR = 60 * 60 * 24 * 366;
+var NOW = new Date();
+
+var calendar = bulmaCalendar.attach('[type="datetime"]', {
+    'minDate': NOW,
+    'maxDate': new Date(+NOW + YEAR)
+})[0];
+
 textareaElement = document.getElementById("text-to-copy");
 
 genform.addEventListener("submit", function(event){
     event.preventDefault();
+
+    // Handle 'Expires' as a special case - so don't include it here
     generate('security.txt', [
         "contact", "encryption", "acknowledgments", "preferredLanguages", "canonical", "policy", "hiring"
     ]);
 
     scrollToStepTwo()
 });
+
+function formatDate(date) {
+    var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                      "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+    return zeroFill(date.getDate(), 2) + " " +
+           monthNames[date.getMonth()] + " " +
+           date.getFullYear() + " " +
+           timezoneOffset(date.getTimezoneOffset());
+}
+
+function zeroFill(num, length) {
+    num = num.toString();
+    while (num.length < length) {
+        num = "0" + num;
+    }
+    return num;
+}
+
+function timezoneOffset(mins) {
+    var hourOffset = Math.abs(Math.floor(mins / 60));
+    mins %= 60;
+
+    var sgn = mins >= 0 ? '+' : '-';
+    return sgn + zeroFill(hourOffset, 2) + zeroFill(mins, 2);
+}
 
 function generate(filename, field_array){
     var text = "";
@@ -27,12 +64,13 @@ function generate(filename, field_array){
         var inputs = document.getElementById(e).querySelector(".list-of-inputs")
 
         inputs.querySelectorAll("input").forEach(function(child) {
-            if(child.value.length > 0){
+            if (child.value.length > 0){
                 text += camelToHyphen(e) + ": " + child.value + "\n";
             }
         });
     });
 
+    text += "Expires: " + formatDate(calendar.date.start);
     textareaElement.value = text;
 
     if (document.queryCommandSupported("copy")) {
