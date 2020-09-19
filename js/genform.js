@@ -23,7 +23,7 @@ function formatDate(dateString, timeString) {
         monthNames[splitDate[1] - 1],
         splitDate[2],
         timeString,
-        getTimezone((new Date).getTimezoneOffset())
+        getTimezone(-(new Date).getTimezoneOffset())
     ].join(" ");
 
     function pad(num) {
