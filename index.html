@@ -17,6 +17,15 @@ directives:
         placeholder: mailto:security@example.com
         spec: 3
     -
+        name: Expires
+        id: expires
+        tags: ['Required', 'Only 1 allowed']
+        help: >
+            The date and time when the content of the security.txt file should be considered stale (so security
+            researchers should then not trust it). Make sure you update this value periodically and keep your
+            file under review.
+        input: datetime
+    -
         name: Encryption
         id: encryption
         tags: ['Optional']
@@ -111,13 +120,24 @@ directives:
                         </a>
                     </p>
                     <ul class="list-of-inputs">
-                        <li class="field">
-                            <div class="control">
-                                <input class="input" placeholder="{{ directive.placeholder }}"
-                                       {% if directive.tags contains 'Required' %} required {% endif %}
-                                >
-                            </div>
-                        </li>
+                        {% if directive.input == 'datetime' %}
+                            <li class="field has-addons">
+                                <div class="control">
+                                    <input type="date" placeholder="YYYY-MM-DD" class="input" required>
+                                </div>
+                                <div class="control">
+                                    <input type="time" placeholder="HH:MM" class="input" required>
+                                </div>
+                            </li>
+                        {% else %}
+                            <li class="field">
+                                <div class="control">
+                                    <input class="input" placeholder="{{ directive.placeholder }}" type="{{ directive.input }}"
+                                           {% if directive.tags contains 'Required' %} required {% endif %}
+                                    >
+                                </div>
+                            </li>
+                        {% endif %}
                     </ul>
                     <div class="field">
                         <div class="control">
