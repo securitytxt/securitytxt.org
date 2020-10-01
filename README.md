@@ -6,7 +6,7 @@
 
 ## Contributing
 
-We welcome contributions from the public.
+We Love To hear from you your suggestions and also welcome contributions from the public.
 
 ### Using the issue tracker 💡
 
@@ -14,8 +14,8 @@ The issue tracker is the preferred channel for bug reports and features requests
 
 ### Issues and labels 🏷
 
-Our bug tracker utilizes several labels to help organize and identify issues.
+Our bug tracker utilizes several labels to help organize and identify issues and resolve them.
 
 ### Guidelines for bug reports 🐛
 
-Use the GitHub issue search — check if the issue has already been reported.
+Use the GitHub issue search — check if the issue has already been reported it would help.
