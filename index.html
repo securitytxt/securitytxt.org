@@ -1,3 +1,9 @@
+<html>
+	<head>
+		<title> Info to use html </title>
+	</head>	
+<H1 align="center"><B> CYBER SECURITY </B></H1>
+<body>	
 ---
 layout: default
 index: true
@@ -155,16 +161,19 @@ directives:
 <section class="section">
     <div class="container content">
         <h1 class="title">Frequently asked questions</h1>
-        <h5>What is the main purpose of security.txt?</h5>
+	    <ol type="1">
+	<li><h5>What is the main purpose of security.txt?</h5></li>
         <p>The main purpose of security.txt is to help make things easier for companies and security researchers when trying to secure platforms. Thanks to security.txt, security researchers can easily get in touch with companies about security issues.</p>
-        <h5>Is security.txt an <a href="https://en.wikipedia.org/wiki/Request_for_Comments"><abbr title="Request For Comments">RFC</abbr></a>?</h5>
+        <li><h5>Is security.txt an <a href="https://en.wikipedia.org/wiki/Request_for_Comments"><abbr title="Request For Comments">RFC</abbr></a>?</h5></li>
         <p>security.txt is currently an Internet draft that has been submitted for <abbr title="Request For Comments">RFC</abbr> review. This means that security.txt is still in the early stages of development. We welcome contributions from the public: <a href="https://github.com/securitytxt/security-txt">https://github.com/securitytxt/security-txt</a></p>
-        <h5>Where should I put the security.txt file?</h5>
+        <li><h5>Where should I put the security.txt file?</h5></li>
         <p>For websites, the security.txt file should be placed under the <code>/.well-known/</code> path (<code>/.well-known/security.txt</code>) [<a href="https://tools.ietf.org/html/rfc8615"><abbr title="Request For Comments">RFC</abbr>8615</a>]. It can also be placed in the root directory (<code>/security.txt</code>) of a website, especially if the <code>/.well-known/</code> directory cannot be used for technical reasons, or simply as a fallback. The file can be placed in both locations of a website at the same time. For code repositories, the file should be placed in the root directory of the repository.</p>
-				<h5>Are there any settings I should apply to the file?</h5>
-				<p>The security.txt file should have an Internet Media Type of <code>text/plain</code> and must be served over HTTPS.</p>
-        <h5>Will adding an email address expose me to spam bots?</h5>
+        <li><h5>Are there any settings I should apply to the file?</h5></li>
+	<p>The security.txt file should have an Internet Media Type of <code>text/plain</code> and must be served over HTTPS.</p>
+	<li><h5>Will adding an email address expose me to spam bots?</h5></li>
         <p>The email value is an optional field. If you are worried about spam, you can set a URI as the value and link to your security policy.</p>
+		    <li><h5> Why we should use VPN? </h5></li>
+	<p>Vpn stands for Virtual Private Network. It is a network connection method for creating incrypted and safe connection. This method protects data from snopping, interference, censorship</p>    
     </div>
 </section>
 
@@ -176,3 +185,5 @@ directives:
 </section>
 
 <script src="{{ "/js/genform.js" | relative_url}}?v={{ site.time | date: "%s" }}"></script>
+	</body>	
+</html>
