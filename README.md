@@ -7,6 +7,7 @@
 ## Contributing
 
 We welcome contributions from the public.
+Hi folks, do contribute to this project which will beneficial to both. Thanks for your precious time.
 
 ### Using the issue tracker 💡
 
