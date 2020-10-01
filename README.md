@@ -19,3 +19,6 @@ Our bug tracker utilizes several labels to help organize and identify issues.
 ### Guidelines for bug reports 🐛
 
 Use the GitHub issue search — check if the issue has already been reported.
+ ## developer details to contribute in this project
+  github username 
+  about yourself
