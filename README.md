@@ -6,7 +6,7 @@
 
 ## Contributing
 
-We welcome contributions from the public.
+We welcome contributions from the public. Your contributions are valuable for us.
 
 ### Using the issue tracker 💡
 
