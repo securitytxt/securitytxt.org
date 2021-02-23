@@ -12,19 +12,14 @@ genform.addEventListener("submit", function(event){
 // Convert a date string and time string into a string compliant with the RFC
 // Date string: YYYY-MM-DD, Time string: HH:MM (just like browsers will return for date/time inputs)
 function formatDate(dateString, timeString) {
-    var monthNames = [
-        "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
-    ];
+    var date = new Date(dateString + ' ' + timeString);
 
-    var splitDate = dateString.split("-");
+    var monthName = new Intl.DateTimeFormat('en-US', { 'month': 'short' }).format(date);
+    var weekdayName = new Intl.DateTimeFormat('en-US', { 'weekday': 'short' }).format(date);
 
-    return [
-        Number(splitDate[2]).toString(),
-        monthNames[splitDate[1] - 1],
-        splitDate[0],
-        timeString,
-        getTimezone(-(new Date).getTimezoneOffset())
-    ].join(" ");
+    return weekdayName + ', ' + // (e.g. "Thu,")
+        date.getDate() + ' ' + monthName + ' ' + date.getFullYear() + ' ' + // (e.g. "2 Jan 1971")
+        timeString + ' ' + getTimezone(-(new Date).getTimezoneOffset()); // (e.g. "12:00 +0100")
 
     function pad(num) {
         return num.toString().padStart(2, '0');
