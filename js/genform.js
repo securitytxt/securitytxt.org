@@ -19,9 +19,9 @@ function formatDate(dateString, timeString) {
     var splitDate = dateString.split("-");
 
     return [
-        splitDate[0],
+        Number(splitDate[2]).toString(),
         monthNames[splitDate[1] - 1],
-        splitDate[2],
+        splitDate[0],
         timeString,
         getTimezone(-(new Date).getTimezoneOffset())
     ].join(" ");
