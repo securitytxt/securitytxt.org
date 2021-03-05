@@ -17,6 +17,15 @@ directives:
         placeholder: mailto:security@example.com
         spec: 3
     -
+        name: Expires
+        id: expires
+        tags: ['Required', 'Only 1 allowed']
+        help: >
+            The date and time when the content of the security.txt file should be considered stale (so security
+            researchers should then not trust it). Make sure you update this value periodically and keep your
+            file under review.
+        input: datetime
+    -
         name: Encryption
         id: encryption
         tags: ['Optional']
@@ -40,15 +49,15 @@ directives:
             A comma-separated list of language codes that your security team speaks. <strong>You may include more
             than one language</strong>.
         placeholder: en, es, ru
-        spec: 7
+        spec: 8
     -
         name: Canonical
         id: canonical
-        tags: ['Optional', 'Only 1 allowed']
+        tags: ['Optional']
         help: >
-            The most common URL for accessing your security.txt file. It is important to include this if you are
-            digitally signing the security.txt file, so that researchers can know for sure that you didn't just steal
-            someone else's file with the same content.
+            The URLs for accessing your security.txt file. It is important to include this if you are
+            digitally signing the security.txt file, so that the location of the security.txt file can be digitally
+            signed too.
         placeholder: https://example.com/.well-known/security.txt
         spec: 2
     -
@@ -59,14 +68,17 @@ directives:
             A link to a policy detailing what security researchers should do when searching for or reporting security
             issues. Remember to include "https://".
         placeholder: https://example.com/security-policy.html
-        spec: 6
+        spec: 7
     -
         name: Hiring
         id: hiring
         tags: ['Optional']
         help: A link to any security-related job openings in your organisation. Remember to include "https://".
         placeholder: https://example.com/jobs.html
-        spec: 5
+        spec: 6
+genform_version: -10
+latest_draft_version: -10
+draft_genform_delta: nil 
 ---
 
 <div id="txt-notification">
@@ -95,6 +107,29 @@ directives:
         <p>Create a text file called <code>security.txt</code> under the <code>.well-known</code> directory of your project.</p>
         <br>
         <form id="genform">
+            {% if page.latest_draft_version == page.genform_version %}
+                {% assign is_up_to_date = true %}
+            {% else %}
+                {% assign is_up_to_date = false %}
+            {% endif%}
+            <article class="message {% if is_up_to_date %} is-success {% else %} is-warning {% endif %}">
+                <div class="message-header">
+                    <p>{% if is_up_to_date %} Form is up-to-date {% else %} Form is out-of-date {% endif %}</p>
+                </div>
+                <div class="message-body">
+                    <p>
+                        {% if is_up_to_date %}
+                            This form is up-to-date with the latest Internet draft at the time of writing. The Internet draft is subject
+                            to change, so you may want to verify that version <strong>{{ page.latest_draft_version }}</strong> is still the
+                            <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt">latest
+                            version</a> &mdash; and if not, to check for any differences.
+                        {% else %}
+                            This form is for version <strong>{{ page.genform_version }}</strong>, but the latest published draft is
+                            <strong>{{ page.latest_draft_version }}</strong>. {{ page.draft_genform_delta }}
+                        {% endif %}
+                    </p>
+                </div>
+            </article>
             {% for directive in page.directives %}
                 <fieldset class="box" id="{{directive.id}}">
                     <legend class="label">
@@ -111,13 +146,24 @@ directives:
                         </a>
                     </p>
                     <ul class="list-of-inputs">
-                        <li class="field">
-                            <div class="control">
-                                <input class="input" placeholder="{{ directive.placeholder }}"
-                                       {% if directive.tags contains 'Required' %} required {% endif %}
-                                >
-                            </div>
-                        </li>
+                        {% if directive.input == 'datetime' %}
+                            <li class="field has-addons">
+                                <div class="control">
+                                    <input type="date" placeholder="YYYY-MM-DD" class="input" required>
+                                </div>
+                                <div class="control">
+                                    <input type="time" placeholder="HH:MM" class="input" required>
+                                </div>
+                            </li>
+                        {% else %}
+                            <li class="field">
+                                <div class="control">
+                                    <input class="input" placeholder="{{ directive.placeholder }}" type="{{ directive.input }}"
+                                           {% if directive.tags contains 'Required' %} required {% endif %}
+                                    >
+                                </div>
+                            </li>
+                        {% endif %}
                     </ul>
                     <div class="field">
                         <div class="control">

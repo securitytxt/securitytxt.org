@@ -3,11 +3,44 @@ textareaElement = document.getElementById("text-to-copy");
 genform.addEventListener("submit", function(event){
     event.preventDefault();
     generate('security.txt', [
-        "contact", "encryption", "acknowledgments", "preferredLanguages", "canonical", "policy", "hiring"
+        "contact", "expires", "encryption", "acknowledgments", "preferredLanguages", "canonical", "policy", "hiring"
     ]);
 
     scrollToStepTwo()
 });
+
+// Convert a date string and time string into a string compliant with the RFC
+// Date string: YYYY-MM-DD, Time string: HH:MM (just like browsers will return for date/time inputs)
+function formatDate(dateString, timeString) {
+    var date = new Date(dateString + ' ' + timeString);
+
+    var monthName = new Intl.DateTimeFormat('en-US', { 'month': 'short' }).format(date);
+    var weekdayName = new Intl.DateTimeFormat('en-US', { 'weekday': 'short' }).format(date);
+
+    return weekdayName + ', ' + // (e.g. "Thu,")
+        date.getDate() + ' ' + monthName + ' ' + date.getFullYear() + ' ' + // (e.g. "2 Jan 1971")
+        timeString + ' ' + getTimezone(-(new Date).getTimezoneOffset()); // (e.g. "12:00 +0100")
+
+    function pad(num) {
+        return num.toString().padStart(2, '0');
+    }
+
+    function getTimezone(offset) {
+        // Converts e.g. -90 to "-0130" i.e. "+/- HHMM"
+        
+        // Sign +/-
+        var timezone = offset < 0 ? "-" : "+";
+        offset = Math.abs(offset);
+
+        // HH (pad with '0' to ensure length is 2)
+        timezone += pad(Math.floor(offset / 60));
+        offset %= 60;
+
+        // MM (pad with '0' to ensure length is 2)
+        timezone += pad(offset);
+        return timezone;
+    }
+}
 
 function generate(filename, field_array){
     var text = "";
@@ -24,13 +57,20 @@ function generate(filename, field_array){
 
     field_array.forEach(function(e){
         console.log(e)
-        var inputs = document.getElementById(e).querySelector(".list-of-inputs")
 
-        inputs.querySelectorAll("input").forEach(function(child) {
-            if(child.value.length > 0){
-                text += camelToHyphen(e) + ": " + child.value + "\n";
-            }
-        });
+        if (e == "expires") {
+            var dateInput = document.getElementById(e).querySelector("[type='date']");
+            var timeInput = document.getElementById(e).querySelector("[type='time']");
+
+            text += camelToHyphen(e) + ": " + formatDate(dateInput.value, timeInput.value);
+        } else {
+            var inputs = document.getElementById(e).querySelector(".list-of-inputs")
+            inputs.querySelectorAll("input").forEach(function(child) {
+                if(child.value.length > 0){
+                    text += camelToHyphen(e) + ": " + child.value + "\n";
+                }
+            });
+        }
     });
 
     textareaElement.value = text;
