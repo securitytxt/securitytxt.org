@@ -62,7 +62,7 @@ function generate(filename, field_array){
             var dateInput = document.getElementById(e).querySelector("[type='date']");
             var timeInput = document.getElementById(e).querySelector("[type='time']");
 
-            text += camelToHyphen(e) + ": " + formatDate(dateInput.value, timeInput.value);
+            text += camelToHyphen(e) + ": " + formatDate(dateInput.value, timeInput.value) + "\n";
         } else {
             var inputs = document.getElementById(e).querySelector(".list-of-inputs")
             inputs.querySelectorAll("input").forEach(function(child) {
