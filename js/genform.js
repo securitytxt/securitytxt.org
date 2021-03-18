@@ -12,7 +12,9 @@ genform.addEventListener("submit", function(event){
 // Convert a date string and time string into a string compliant with the RFC
 // Date string: YYYY-MM-DD, Time string: HH:MM (just like browsers will return for date/time inputs)
 function formatDate(dateString, timeString) {
-    var date = new Date(dateString + ' ' + timeString);
+    // The replace operation is for Safari compatibility: it can only parse YYYY/MM/DD dates and most
+    // other browsers support both YYYY-MM-DD and YYYY/MM/DD.
+    var date = new Date(dateString.replace(/-/g, '/') + ' ' + timeString);
 
     var monthName = new Intl.DateTimeFormat('en-US', { 'month': 'short' }).format(date);
     var weekdayName = new Intl.DateTimeFormat('en-US', { 'weekday': 'short' }).format(date);
