@@ -10,38 +10,11 @@ genform.addEventListener("submit", function(event){
 });
 
 // Convert a date string and time string into a string compliant with the RFC
-// Date string: YYYY-MM-DD, Time string: HH:MM (just like browsers will return for date/time inputs)
 function formatDate(dateString, timeString) {
     // The replace operation is for Safari compatibility: it can only parse YYYY/MM/DD dates and most
     // other browsers support both YYYY-MM-DD and YYYY/MM/DD.
     var date = new Date(dateString.replace(/-/g, '/') + ' ' + timeString);
-
-    var monthName = new Intl.DateTimeFormat('en-US', { 'month': 'short' }).format(date);
-    var weekdayName = new Intl.DateTimeFormat('en-US', { 'weekday': 'short' }).format(date);
-
-    return weekdayName + ', ' + // (e.g. "Thu,")
-        date.getDate() + ' ' + monthName + ' ' + date.getFullYear() + ' ' + // (e.g. "2 Jan 1971")
-        timeString + ' ' + getTimezone(-(new Date).getTimezoneOffset()); // (e.g. "12:00 +0100")
-
-    function pad(num) {
-        return num.toString().padStart(2, '0');
-    }
-
-    function getTimezone(offset) {
-        // Converts e.g. -90 to "-0130" i.e. "+/- HHMM"
-        
-        // Sign +/-
-        var timezone = offset < 0 ? "-" : "+";
-        offset = Math.abs(offset);
-
-        // HH (pad with '0' to ensure length is 2)
-        timezone += pad(Math.floor(offset / 60));
-        offset %= 60;
-
-        // MM (pad with '0' to ensure length is 2)
-        timezone += pad(offset);
-        return timezone;
-    }
+    return date.toISOString();
 }
 
 function generate(filename, field_array){
