@@ -3,4 +3,4 @@
 Contact: https://hackerone.com/ed
 Encryption: https://keybase.pub/edoverflow/pgp_key.asc
 Acknowledgments: https://hackerone.com/ed/thanks
-Expires: Mon, 14 Mar 2022 00:00 +0000
+Expires: 2022-03-14T00:00:00.000Z
