@@ -25,6 +25,7 @@ directives:
             researchers should then not trust it). Make sure you update this value periodically and keep your
             file under review.
         input: datetime
+        spec: 5
     -
         name: Encryption
         id: encryption
@@ -76,8 +77,8 @@ directives:
         help: A link to any security-related job openings in your organisation. Remember to include "https://".
         placeholder: https://example.com/jobs.html
         spec: 6
-genform_version: -11
-latest_draft_version: -11
+genform_version: -12
+latest_draft_version: -12
 draft_genform_delta: nil 
 ---
 
@@ -121,7 +122,7 @@ draft_genform_delta: nil
                         {% if is_up_to_date %}
                             This form is up-to-date with the latest Internet draft at the time of writing. The Internet draft is subject
                             to change, so you may want to verify that version <strong>{{ page.latest_draft_version }}</strong> is still the
-                            <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt-11">latest
+                            <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt-12">latest
                             version</a> &mdash; and if not, to check for any differences.
                         {% else %}
                             This form is for version <strong>{{ page.genform_version }}</strong>, but the latest published draft is
@@ -152,7 +153,7 @@ draft_genform_delta: nil
                     <p class="help">
                         {{ directive.help }} See 
                         <a target="_blank" rel="noopener" 
-                           href="https://tools.ietf.org/html/draft-foudil-securitytxt-11#section-3.5.{{directive.spec}}">
+                           href="https://tools.ietf.org/html/draft-foudil-securitytxt-12#section-3.5.{{directive.spec}}">
                             the full description of {{ directive.name }}
                         </a>
                     </p>
@@ -201,7 +202,7 @@ draft_genform_delta: nil
 <section class="section">
     <div class="container">
         <h1 class="title" id="step-two">Step 2</h1>
-        <p>You are ready to go! Publish your security.txt file. If you want to give security researchers confidence that your security.txt file is authentic, and not planted by an attacker, consider <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt-11#section-3.3">digitally signing</a> the file with an OpenPGP cleartext signature.</p>
+        <p>You are ready to go! Publish your security.txt file. If you want to give security researchers confidence that your security.txt file is authentic, and not planted by an attacker, consider <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt-12#section-3.3">digitally signing</a> the file with an OpenPGP cleartext signature.</p>
         <div class="field">
           <div class="control">
             <textarea id="text-to-copy" class="textarea" readonly></textarea>
