@@ -6,7 +6,7 @@ genform.addEventListener("submit", function(event){
 	// First, validate the form
 	var didValidationFail = false;
 	var contactInputElements = document.getElementById('contact').getElementsByTagName('input');
-	
+
 	for (var i = 0; i < contactInputElements.length; i++) {
 		var inputEl = contactInputElements[i];
 		checkContactValidity(inputEl);
@@ -157,7 +157,7 @@ function copyTextarea(){
     textareaElement.select();
     document.execCommand("copy");
 
-    indow.getSelection().empty();
+    window.getSelection().empty();
     showNotification();
 }
 
