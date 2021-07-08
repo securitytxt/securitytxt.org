@@ -130,6 +130,17 @@ draft_genform_delta: nil
                     </p>
                 </div>
             </article>
+			
+			<article id="validation-errors-box" class="message is-danger is-hidden">
+				<div class="message-body">
+					<p>
+						The Contact field failed to validate. Please ensure it starts with <code>mailto:</code> for e-mail addresses,
+						<code>tel:</code> for telephone numbers, or <code>https://</code> for web URIs.
+					</p>
+					<p>For example, <code>mailto:contact@example.com</code>.</p>
+				</div>
+			</article>
+
             {% for directive in page.directives %}
                 <fieldset class="box" id="{{directive.id}}">
                     <legend class="label">
@@ -160,7 +171,13 @@ draft_genform_delta: nil
                                 <div class="control">
                                     <input class="input" placeholder="{{ directive.placeholder }}" type="{{ directive.input }}"
                                            {% if directive.tags contains 'Required' %} required {% endif %}
+                                           {% if directive.id == 'contact' %} oninput='checkContactValidity(this);' {% endif %}
                                     >
+									{% if directive.id == 'contact' %}
+										<p class="is-hidden help is-danger">
+											Each contact field must begin with https:// for web URIs; tel: for telephone numbers; or mailto: for e-mails.
+										</p>
+									{% endif %}
                                 </div>
                             </li>
                         {% endif %}
