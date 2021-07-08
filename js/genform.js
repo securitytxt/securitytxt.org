@@ -3,26 +3,26 @@ textareaElement = document.getElementById("text-to-copy");
 genform.addEventListener("submit", function(event){
     event.preventDefault();
 
-	// First, validate the form
-	var didValidationFail = false;
-	var contactInputElements = document.getElementById('contact').getElementsByTagName('input');
+    // First, validate the form
+    var didValidationFail = false;
+    var contactInputElements = document.getElementById('contact').getElementsByTagName('input');
 
-	for (var i = 0; i < contactInputElements.length; i++) {
-		var inputEl = contactInputElements[i];
-		checkContactValidity(inputEl);
+    for (var i = 0; i < contactInputElements.length; i++) {
+        var inputEl = contactInputElements[i];
+        checkContactValidity(inputEl);
 
-		if (!isContactValid(inputEl)) {
-			inputEl.focus();
-			didValidationFail = true;
-		}
-	}
+        if (!isContactValid(inputEl)) {
+            inputEl.focus();
+            didValidationFail = true;
+        }
+    }
 
-	if (didValidationFail) {
-		document.getElementById('validation-errors-box').classList.remove('is-hidden');
-		return;
-	} else {
-		document.getElementById('validation-errors-box').classList.add('is-hidden');
-	}
+    if (didValidationFail) {
+        document.getElementById('validation-errors-box').classList.remove('is-hidden');
+        return;
+    } else {
+        document.getElementById('validation-errors-box').classList.add('is-hidden');
+    }
 
     generate('security.txt', [
         "contact", "expires", "encryption", "acknowledgments", "preferredLanguages", "canonical", "policy", "hiring"
@@ -51,7 +51,7 @@ function formatDate(dateString, timeString) {
 
     function getTimezone(offset) {
         // Converts e.g. -90 to "-0130" i.e. "+/- HHMM"
-        
+
         // Sign +/-
         var timezone = offset < 0 ? "-" : "+";
         offset = Math.abs(offset);
@@ -68,7 +68,7 @@ function formatDate(dateString, timeString) {
 
 function generate(filename, field_array){
     var text = "";
-    
+
     // Converts camel case like 'abcDefGhi' into
     // the format 'Abc-Def-Ghi'
     function camelToHyphen(camelCaseWord) {
@@ -106,28 +106,28 @@ function generate(filename, field_array){
 
 function addAlternative(button) {
     var list = button.parentElement.parentElement.parentElement.querySelector(".list-of-inputs")
-    
+
     var newInput = document.createElement("INPUT")
     newInput.setAttribute("placeholder", "Another possible alternative")
     newInput.setAttribute("class", "input")
 
-	var newInputControl = document.createElement("DIV")
+    var newInputControl = document.createElement("DIV")
     newInputControl.setAttribute("class", "control is-expanded")
     newInputControl.appendChild(newInput)
 
-	if (button.parentElement.parentElement.parentElement.id === 'contact') {
-		newInput.addEventListener('input', function () { checkContactValidity(newInput); }) 
-		
-		var errorMessage = document.createElement('P');
-		newInputControl.appendChild(errorMessage);
-		errorMessage.textContent = 'Each contact field must begin with https:// for web URIs; tel: for telephone numbers; or mailto: for e-mails.';
-		
-		var ERROR_MESSAGE_CLASSES = ['is-danger', 'is-hidden', 'help']
-		
-		for (var i = 0; i < ERROR_MESSAGE_CLASSES.length; i++) {
-			errorMessage.classList.add(ERROR_MESSAGE_CLASSES[i])
-		}
-	}
+    if (button.parentElement.parentElement.parentElement.id === 'contact') {
+        newInput.addEventListener('input', function () { checkContactValidity(newInput); }); 
+
+        var errorMessage = document.createElement('P');
+        newInputControl.appendChild(errorMessage);
+        errorMessage.textContent = 'Each contact field must begin with https:// for web URIs; tel: for telephone numbers; or mailto: for e-mails.';
+
+        var ERROR_MESSAGE_CLASSES = ['is-danger', 'is-hidden', 'help']
+
+        for (var i = 0; i < ERROR_MESSAGE_CLASSES.length; i++) {
+            errorMessage.classList.add(ERROR_MESSAGE_CLASSES[i])
+        }
+    }
 
     var removeButton = document.createElement("BUTTON")
     removeButton.setAttribute("type", "button")
@@ -192,17 +192,17 @@ function showNotification(){
 }
 
 function isContactValid(el) {
-	var VALIDATION_REGEX = /^(mailto:|https:\/\/|tel:)/i;
-	
-	return VALIDATION_REGEX.test(el.value);
+    var VALIDATION_REGEX = /^(mailto:|https:\/\/|tel:)/i;
+
+    return VALIDATION_REGEX.test(el.value);
 }
 
 function checkContactValidity(el) {
-	if (isContactValid(el)) {
-		el.parentElement.getElementsByTagName("p")[0].classList.add('is-hidden');
-		el.classList.remove('is-danger');
-	} else {
-		el.parentElement.getElementsByTagName("p")[0].classList.remove('is-hidden')
-		el.classList.add('is-danger');
-	}
+    if (isContactValid(el)) {
+        el.parentElement.getElementsByTagName("p")[0].classList.add('is-hidden');
+        el.classList.remove('is-danger');
+    } else {
+        el.parentElement.getElementsByTagName("p")[0].classList.remove('is-hidden')
+        el.classList.add('is-danger');
+    }
 }

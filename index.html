@@ -130,16 +130,16 @@ draft_genform_delta: nil
                     </p>
                 </div>
             </article>
-			
-			<article id="validation-errors-box" class="message is-danger is-hidden">
-				<div class="message-body">
-					<p>
-						The Contact field failed to validate. Please ensure it starts with <code>mailto:</code> for e-mail addresses,
-						<code>tel:</code> for telephone numbers, or <code>https://</code> for web URIs.
-					</p>
-					<p>For example, <code>mailto:contact@example.com</code>.</p>
-				</div>
-			</article>
+
+            <article id="validation-errors-box" class="message is-danger is-hidden">
+                <div class="message-body">
+                    <p>
+                        The Contact field failed to validate. Please ensure it starts with <code>mailto:</code> for e-mail addresses,
+                        <code>tel:</code> for telephone numbers, or <code>https://</code> for web URIs.
+                    </p>
+                    <p>For example, <code>mailto:contact@example.com</code>.</p>
+                </div>
+            </article>
 
             {% for directive in page.directives %}
                 <fieldset class="box" id="{{directive.id}}">
@@ -173,11 +173,11 @@ draft_genform_delta: nil
                                            {% if directive.tags contains 'Required' %} required {% endif %}
                                            {% if directive.id == 'contact' %} oninput='checkContactValidity(this);' {% endif %}
                                     >
-									{% if directive.id == 'contact' %}
-										<p class="is-hidden help is-danger">
-											Each contact field must begin with https:// for web URIs; tel: for telephone numbers; or mailto: for e-mails.
-										</p>
-									{% endif %}
+                                    {% if directive.id == 'contact' %}
+                                        <p class="is-hidden help is-danger">
+                                            Each contact field must begin with https:// for web URIs; tel: for telephone numbers; or mailto: for e-mails.
+                                        </p>
+                                    {% endif %}
                                 </div>
                             </li>
                         {% endif %}
@@ -224,8 +224,8 @@ draft_genform_delta: nil
         <p>security.txt is currently an Internet draft that has been submitted for <abbr title="Request For Comments">RFC</abbr> review. This means that security.txt is still in the early stages of development. We welcome contributions from the public: <a href="https://github.com/securitytxt/security-txt">https://github.com/securitytxt/security-txt</a></p>
         <h5>Where should I put the security.txt file?</h5>
         <p>For websites, the security.txt file should be placed under the <code>/.well-known/</code> path (<code>/.well-known/security.txt</code>) [<a href="https://tools.ietf.org/html/rfc8615"><abbr title="Request For Comments">RFC</abbr>8615</a>]. It can also be placed in the root directory (<code>/security.txt</code>) of a website, especially if the <code>/.well-known/</code> directory cannot be used for technical reasons, or simply as a fallback. The file can be placed in both locations of a website at the same time.</p>
-				<h5>Are there any settings I should apply to the file?</h5>
-				<p>The security.txt file should have an Internet Media Type of <code>text/plain</code> and must be served over HTTPS.</p>
+                <h5>Are there any settings I should apply to the file?</h5>
+                <p>The security.txt file should have an Internet Media Type of <code>text/plain</code> and must be served over HTTPS.</p>
         <h5>Will adding an email address expose me to spam bots?</h5>
         <p>The email value is an optional field. If you are worried about spam, you can set a URI as the value and link to your security policy.</p>
     </div>
