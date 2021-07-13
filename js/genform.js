@@ -188,7 +188,7 @@ function autoprefixEmail(el) {
     // NOTE: If this regular expression is changed in future, it should always fail if
     // the user enters some other schema (e.g. https://) so they always have the option of overriding it.
     // Currently this is achieved by not allowing a colon to appear in the input.
-    if (/^[a-z_+.-]+@[a-z_+.-]+$/i.test(el.value)) {
+    if (/^[a-z0-9_+.-]+@[a-z0-9_+.-]+$/i.test(el.value)) {
         el.value = 'mailto:' + el.value;
     }
 
