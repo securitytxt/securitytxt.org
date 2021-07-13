@@ -181,15 +181,15 @@ function checkContactValidity(el) {
     }
 }
 
-function autoprefixEmail(el) {
+function autoprefixEmail(inputEl) {
     // Add mailto: prefix, e.g. contact@example.com -> mailto:contact@example.com
 
     // NOTE: If this regular expression is changed in future, it should always fail if
     // the user enters some other schema (e.g. https://) so they always have the option of overriding it.
     // Currently this is achieved by not allowing a colon to appear in the input.
-    if (/^[a-z0-9_+.-]+@[a-z0-9_+.-]+$/i.test(el.value)) {
-        el.value = 'mailto:' + el.value;
+    if (/^[a-z0-9_+.-]+@[a-z0-9_+.-]+$/i.test(inputEl.value)) {
+        inputEl.value = 'mailto:' + inputEl.value;
     }
 
-    checkContactValidity(el); // potentially remove validation error if issue resolved
+    checkContactValidity(inputEl); // potentially remove validation error if issue resolved
 }
