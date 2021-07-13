@@ -90,7 +90,6 @@ function addAlternative(button) {
     newInputControl.appendChild(newInput)
 
     if (button.parentElement.parentElement.parentElement.id === 'contact') {
-        newInput.addEventListener('input', function () { checkContactValidity(newInput); }); 
         newInput.addEventListener('change', function () { autoprefixEmail(newInput); });
 
         var errorMessage = document.createElement('P');

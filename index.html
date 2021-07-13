@@ -173,7 +173,6 @@ draft_genform_delta: nil
                                     <input class="input" placeholder="{{ directive.placeholder }}" type="{{ directive.input }}"
                                         {% if directive.tags contains 'Required' %} required {% endif %}
                                         {% if directive.id == 'contact' %}
-                                            oninput='checkContactValidity(this);'
                                             onchange='autoprefixEmail(this);'
                                         {% endif %}
                                     >
