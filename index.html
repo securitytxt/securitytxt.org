@@ -77,9 +77,8 @@ directives:
         help: A link to any security-related job openings in your organisation. Remember to include "https://".
         placeholder: https://example.com/jobs.html
         spec: 6
-genform_version: -12
-latest_draft_version: -12
-draft_genform_delta: nil 
+recent_changes: >
+    The date format for Expires has changed to ISO 8601. An example of the new format is <code>Expires: 2021-12-31T18:37:07.000Z</code>.
 ---
 
 <div id="txt-notification">
@@ -108,29 +107,16 @@ draft_genform_delta: nil
         <p>Create a text file called <code>security.txt</code> under the <code>.well-known</code> directory of your project.</p>
         <br>
         <form id="genform">
-            {% if page.latest_draft_version == page.genform_version %}
-                {% assign is_up_to_date = true %}
-            {% else %}
-                {% assign is_up_to_date = false %}
-            {% endif%}
-            <article class="message {% if is_up_to_date %} is-success {% else %} is-warning {% endif %}">
-                <div class="message-header">
-                    <p>{% if is_up_to_date %} Form is up-to-date {% else %} Form is out-of-date {% endif %}</p>
-                </div>
-                <div class="message-body">
-                    <p>
-                        {% if is_up_to_date %}
-                            This form is up-to-date with the latest Internet draft at the time of writing. The Internet draft is subject
-                            to change, so you may want to verify that version <strong>{{ page.latest_draft_version }}</strong> is still the
-                            <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt-12">latest
-                            version</a> &mdash; and if not, to check for any differences.
-                        {% else %}
-                            This form is for version <strong>{{ page.genform_version }}</strong>, but the latest published draft is
-                            <strong>{{ page.latest_draft_version }}</strong>. {{ page.draft_genform_delta }}
-                        {% endif %}
-                    </p>
-                </div>
-            </article>
+            {% if page.recent_changes %}
+                <article class="message is-warning">
+                    <div class="message-header">
+                        Recent changes to the specification
+                    </div>
+                    <div class="message-body">
+                        <p>{{ page.recent_changes }}</p>
+                    </div>
+                </article>
+            {% endif %}
 
             <article id="validation-errors-box" class="message is-danger is-hidden">
                 <div class="message-body">
