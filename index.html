@@ -171,8 +171,10 @@ draft_genform_delta: nil
                             <li class="field">
                                 <div class="control">
                                     <input class="input" placeholder="{{ directive.placeholder }}" type="{{ directive.input }}"
-                                           {% if directive.tags contains 'Required' %} required {% endif %}
-                                           {% if directive.id == 'contact' %} oninput='checkContactValidity(this);' {% endif %}
+                                        {% if directive.tags contains 'Required' %} required {% endif %}
+                                        {% if directive.id == 'contact' %}
+                                            onchange='autoprefixEmail(this);'
+                                        {% endif %}
                                     >
                                     {% if directive.id == 'contact' %}
                                         <p class="is-hidden help is-danger">

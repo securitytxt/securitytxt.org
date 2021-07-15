@@ -90,7 +90,7 @@ function addAlternative(button) {
     newInputControl.appendChild(newInput)
 
     if (button.parentElement.parentElement.parentElement.id === 'contact') {
-        newInput.addEventListener('input', function () { checkContactValidity(newInput); }); 
+        newInput.addEventListener('change', function () { autoprefixEmail(newInput); });
 
         var errorMessage = document.createElement('P');
         newInputControl.appendChild(errorMessage);
@@ -179,4 +179,17 @@ function checkContactValidity(el) {
         el.parentElement.getElementsByTagName("p")[0].classList.remove('is-hidden')
         el.classList.add('is-danger');
     }
+}
+
+function autoprefixEmail(inputEl) {
+    // Add mailto: prefix, e.g. contact@example.com -> mailto:contact@example.com
+
+    // NOTE: If this regular expression is changed in future, it should always fail if
+    // the user enters some other schema (e.g. https://) so they always have the option of overriding it.
+    // Currently this is achieved by not allowing a colon to appear in the input.
+    if (/^[a-z0-9_+.-]+@[a-z0-9_+.-]+$/i.test(inputEl.value)) {
+        inputEl.value = 'mailto:' + inputEl.value;
+    }
+
+    checkContactValidity(inputEl); // potentially remove validation error if issue resolved
 }
