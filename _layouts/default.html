@@ -43,7 +43,7 @@
 </head>
 <body {% if page.index != null %}class="index"{% endif %}>
     <div id="wrapper">
-        <section class="hero is-medium is-light">
+        <section class="hero is-small is-light">
             <div class="hero-head">
                 <nav class="navbar">
                     <div class="container">
@@ -97,16 +97,6 @@
         </section>
         {{ content }}
     </div>
-    <footer class="footer">
-        <div class="container is-fluid">
-            <div class="content has-text-centered">
-                <p>
-                    <strong>security.txt</strong> by <a href="https://twitter.com/edoverflow">EdOverflow</a> and <a href="https://twitter.com/nightwatchcyber">Yakov Shafranovich</a>.
-                </p>
-                <small>Thank you to Casey Ellis and Chris Raethke for donating the securitytxt.org domain.</small>
-            </div>
-        </div>
-    </footer>
     <script>
         document.querySelector('.navbar-burger').addEventListener('click', function(e) {
             e.target.classList.toggle('is-active');
