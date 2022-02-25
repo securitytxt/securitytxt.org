@@ -1,6 +1,16 @@
-# If you would like to report a security issue
-# you may report it to us on HackerOne.
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
 Contact: https://hackerone.com/ed
-Encryption: https://keybase.pub/edoverflow/pgp_key.asc
+Expires: 2023-03-14T00:00:00.000Z
 Acknowledgments: https://hackerone.com/ed/thanks
-Expires: 2022-03-14T00:00:00.000Z
+Preferred-Languages: en, fr, de
+Canonical: https://securitytxt.org/.well-known/security.txt
+Policy: https://hackerone.com/ed?type=team&view_policy=true
+-----BEGIN PGP SIGNATURE-----
+
+iHUEARYKAB0WIQSsP2kEdoKDVFpSg6u3rK+YCkjapwUCYhjpQwAKCRC3rK+YCkja
+pyk2AP97ePaFUo8K8e1D+N+G6caqXjC/pwnZB+Wkk15AI+xstgD/VR5rOLKLZ7QF
+gKk5ohVS7qHou8Ux9cdodY2BRUIdrww=
+=gFfQ
+-----END PGP SIGNATURE-----
