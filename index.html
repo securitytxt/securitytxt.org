@@ -116,7 +116,7 @@ recent_changes: >
         href="https://www.legifrance.gouv.fr/download/pdf?id=huJxqCKNNKgkcV7KPeMiEGdoyaiZlDDLDoWKNzrjT-Y=">French
         government</a>, the <a
         href="https://docs.italia.it/italia/developers-italia/gl-acquisition-and-reuse-software-for-pa-docs/en/stabile/attachments/annex-A-Guide-to-publishing-software-as-open-source.html?highlight=security.txt#security">Italian
-        government</a>, and the <a
+        government</a>, the <a href="https://www.digitaltrustcenter.nl/securitytxt">Dutch government</a>, and the <a
         href="https://www.cyber.gov.au/sites/default/files/2021-12/Information%20Security%20Manual%20%28December%202021%29.pdf">Australian
         Cyber Security Centre</a> endorse the use of security.txt files.
         </p>
@@ -165,7 +165,7 @@ recent_changes: >
                     <p class="help">
                         {{ directive.help }} See 
                         <a target="_blank" rel="noopener" 
-                           href="https://tools.ietf.org/html/draft-foudil-securitytxt-12#section-3.5.{{directive.spec}}">
+                           href="https://www.rfc-editor.org/rfc/rfc9116#section-2.5.{{directive.spec}}">
                             the full description of {{ directive.name }}
                         </a>
                     </p>
@@ -216,7 +216,7 @@ recent_changes: >
 <section class="section">
     <div class="container">
         <h1 class="title" id="step-two">Step 2</h1>
-        <p>You are ready to go! Publish your security.txt file. If you want to give security researchers confidence that your security.txt file is authentic, and not planted by an attacker, consider <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt-12#section-3.3">digitally signing</a> the file with an OpenPGP cleartext signature.</p>
+        <p>You are ready to go! Publish your security.txt file. If you want to give security researchers confidence that your security.txt file is authentic, and not planted by an attacker, consider <a target="_blank" rel="noopener" href="https://www.rfc-editor.org/rfc/rfc9116#section-3.3">digitally signing</a> the file with an OpenPGP cleartext signature.</p>
         <div class="field">
           <div class="control">
             <textarea id="text-to-copy" class="textarea" readonly></textarea>
@@ -236,7 +236,7 @@ recent_changes: >
         <h5>What is the main purpose of security.txt?</h5>
         <p>The main purpose of security.txt is to help make things easier for companies and security researchers when trying to secure platforms. Thanks to security.txt, security researchers can easily get in touch with companies about security issues.</p>
         <h5>Is security.txt an <a href="https://en.wikipedia.org/wiki/Request_for_Comments"><abbr title="Request For Comments">RFC</abbr></a>?</h5>
-        <p>security.txt is currently an Internet draft that has been submitted for <abbr title="Request For Comments">RFC</abbr> review. This means that security.txt is still in the early stages of development. We welcome contributions from the public: <a href="https://github.com/securitytxt/security-txt">https://github.com/securitytxt/security-txt</a></p>
+        <p><a href="https://datatracker.ietf.org/doc/html/rfc9116">Yes</a>! We welcome contributions from the public: <a href="https://github.com/securitytxt/security-txt">https://github.com/securitytxt/security-txt</a></p>
         <h5>Where should I put the security.txt file?</h5>
         <p>For websites, the security.txt file should be placed under the <code>/.well-known/</code> path (<code>/.well-known/security.txt</code>) [<a href="https://tools.ietf.org/html/rfc8615"><abbr title="Request For Comments">RFC</abbr>8615</a>]. It can also be placed in the root directory (<code>/security.txt</code>) of a website, especially if the <code>/.well-known/</code> directory cannot be used for technical reasons, or simply as a fallback. The file can be placed in both locations of a website at the same time.</p>
                 <h5>Are there any settings I should apply to the file?</h5>
