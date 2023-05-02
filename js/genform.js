@@ -25,7 +25,7 @@ genform.addEventListener("submit", function(event){
     }
 
     generate('security.txt', [
-        "contact", "expires", "encryption", "acknowledgments", "preferredLanguages", "canonical", "policy", "hiring"
+        "contact", "expires", "encryption", "acknowledgments", "preferredLanguages", "canonical", "policy", "hiring", "csaf"
     ]);
 
     scrollToStepTwo()
