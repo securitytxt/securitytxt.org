@@ -46,6 +46,9 @@ function generate(filename, field_array){
     // Converts camel case like 'abcDefGhi' into
     // the format 'Abc-Def-Ghi'
     function camelToHyphen(camelCaseWord) {
+        // introduce the special case for CSAF (short term solution)
+        if (camelCaseWord === "CSAF") {return "CSAF"}
+        
         var components = camelCaseWord.split(/(?=[A-Z])/) // abcDef => [abc, Def]
 
         return components.map(function (component) {
