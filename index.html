@@ -77,6 +77,16 @@ directives:
         help: A link to any security-related job openings in your organisation. Remember to include "https://".
         placeholder: https://example.com/jobs.html
         spec: 6
+    -
+        name: CSAF
+        id: csaf
+        tags: ['Optional']
+        help: A link to the provider-metadata.json of your CSAF (Common Security Advisory Framework) provider. Remember to include "https://".
+        placeholder: https://example.com/.well-known/csaf/provider-metadata.json
+        input: url
+        spec: IANA
+        url: https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#718-requirement-8-securitytxt
+
 recent_changes: >
     The date format for Expires has changed to ISO 8601. An example of the new format is <code>Expires: 2021-12-31T18:37:07.000Z</code>.
 ---
@@ -163,11 +173,18 @@ recent_changes: >
                         {% endfor %}
                     </legend>
                     <p class="help">
-                        {{ directive.help }} See 
-                        <a target="_blank" rel="noopener" 
-                           href="https://www.rfc-editor.org/rfc/rfc9116#section-2.5.{{directive.spec}}">
-                            the full description of {{ directive.name }}
-                        </a>
+                        {{ directive.help }} See
+                        {% if directive.spec == 'IANA' %}
+                            <a target="_blank" rel="noopener" 
+                               href="{{directive.url}}">
+                                the full description of {{ directive.name }}
+                            </a>                        
+                        {% else %}
+                            <a target="_blank" rel="noopener" 
+                               href="https://www.rfc-editor.org/rfc/rfc9116#section-2.5.{{directive.spec}}">
+                                the full description of {{ directive.name }}
+                            </a>
+                        {% endif %}
                     </p>
                     <ul class="list-of-inputs">
                         {% if directive.input == 'datetime' %}
