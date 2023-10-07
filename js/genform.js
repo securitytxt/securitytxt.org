@@ -25,7 +25,7 @@ genform.addEventListener("submit", function(event){
     }
 
     generate('security.txt', [
-        "contact", "expires", "encryption", "acknowledgments", "preferredLanguages", "canonical", "policy", "hiring"
+        "contact", "expires", "encryption", "acknowledgments", "preferredLanguages", "canonical", "policy", "hiring", "csaf"
     ]);
 
     scrollToStepTwo()
@@ -46,6 +46,9 @@ function generate(filename, field_array){
     // Converts camel case like 'abcDefGhi' into
     // the format 'Abc-Def-Ghi'
     function camelToHyphen(camelCaseWord) {
+        // introduce the special case for CSAF (short term solution)
+        if (camelCaseWord === "csaf") {return "CSAF"}
+        
         var components = camelCaseWord.split(/(?=[A-Z])/) // abcDef => [abc, Def]
 
         return components.map(function (component) {
